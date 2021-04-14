@@ -37,6 +37,21 @@
           <el-table-column type="expand">
             <template slot-scope="scope">
               <el-tag v-for="(item ,i ) in scope.row.attr_vals" :key="i">{{item}}</el-tag>
+
+              <!--动态添加tag-->
+              <el-input
+                class="input-new-tag"
+                v-if="scope.row.inputVisible"
+                v-model="scope.row.inputValue"
+                ref="saveTagInput"
+                size="small"
+                @keyup.enter.native="handleInputConfirm"
+                @blur="handleInputConfirm"
+              >
+              </el-input>
+              <el-button v-else class="button-new-tag" size="small" @click="showInput(scope.row)">+ New Tag</el-button>
+
+
             </template>
           </el-table-column>
           <el-table-column prop="attr_id" label="参数id"></el-table-column>
@@ -57,6 +72,22 @@
           <el-table-column type="expand">
             <template slot-scope="scope">
               <el-tag v-for="(item ,i ) in scope.row.attr_vals" :key="i">{{item}}</el-tag>
+
+              <!--动态添加tag-->
+              <el-input
+                class="input-new-tag"
+                v-if="inputVisible"
+                v-model="inputValue"
+                ref="saveTagInput"
+                size="small"
+                @keyup.enter.native="handleInputConfirm"
+                @blur="handleInputConfirm"
+              >
+              </el-input>
+              <el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</el-button>
+
+
+
             </template>
           </el-table-column>
           <el-table-column prop="attr_id" label="参数id"></el-table-column>
@@ -175,6 +206,9 @@
             { required: true, message: '请输入属性', trigger: 'blur' }
           ]
         },
+        //控制按钮与文本框的显示
+        inputVisible:false,
+        inputValue:[]
 
       }
     },
@@ -219,6 +253,9 @@
         res.data.forEach(item=>{
           //判断数组是否为空,如果是空的,那么就直接pass
           item.attr_vals = item.attr_vals ? item.attr_vals.split(','):[]
+        //  添加数据,来控制显示框的显示隐藏
+          item.inputVisible = false
+          item.inputValue = ''
         })
 
 
@@ -320,6 +357,13 @@
         //刷新数据
         this.$message.success(res.meta.msg)
         this.getParamesData()
+      },
+      handleInputConfirm(){
+
+      },
+      //点击按钮
+      showInput(row){
+        row.inputVisible = true
 
       }
 
@@ -367,6 +411,9 @@
 
   .el-tag{
     margin-left: 10px;
+  }
+  .input-new-tag{
+    width: 120px;
   }
 
 </style>

@@ -485,3 +485,31 @@ get 请求要加params post 不需要
 ```
 
 
+34. 动态添加标签
+
+
+```
+<el-input
+  class="input-new-tag"
+  v-if="inputVisible"
+  v-model="inputValue"
+  ref="saveTagInput"
+  size="small"
+  @keyup.enter.native="handleInputConfirm"
+  @blur="handleInputConfirm"
+>
+</el-input>
+<el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</el-button>
+
+
+在 每个item 中动态添加 item.inputVisiable = false tem.inputValue = false 
+
+
+
+```
+
+
+
+
+
+

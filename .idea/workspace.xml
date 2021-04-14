@@ -41,12 +41,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/goods/Params.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="219" column="36" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
+            <state relative-caret-position="348">
+              <caret line="257" column="29" selection-start-line="257" selection-start-column="29" selection-end-line="257" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#el-table#0;n#el-tab-pane#0;n#el-tabs#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#el-table#0;n#el-tab-pane#1;n#el-tabs#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <marker date="1618409896622" expanded="true" signature="6911:7148" ph="..." />
+                <marker date="1618411253784" expanded="true" signature="8075:8312" ph="..." />
               </folding>
             </state>
           </provider>
@@ -114,8 +114,8 @@
         <entry file="file://$PROJECT_DIR$/vue02/vue_shop/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="292">
-                <caret line="415" column="27" selection-start-line="415" selection-start-column="27" selection-end-line="415" selection-end-column="27" />
+              <first_editor relative-caret-position="306">
+                <caret line="506" lean-forward="true" selection-start-line="506" selection-end-line="506" />
                 <folding>
                   <element signature="e#0#37#0" expanded="true" />
                 </folding>
@@ -140,10 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>queryInfo</find>
-      <find>showSetRightDialog</find>
-      <find>allocRoleDialogVisible</find>
-      <find>allocRoleDialog</find>
       <find>console</find>
       <find>:span</find>
       <find>dialogVisible</find>
@@ -167,9 +163,13 @@
       <find>修改</find>
       <find>editParamsFormRef</find>
       <find>confirm</find>
-      <find>删除</find>
       <find>editParamsDialogShow</find>
       <find>tag</find>
+      <find>click</find>
+      <find>inputValue</find>
+      <find>删除</find>
+      <find>el-tag</find>
+      <find>showInput</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -436,12 +436,12 @@
       <workItem from="1617871322574" duration="158000" />
       <workItem from="1617885567477" duration="1659000" />
       <workItem from="1617948539424" duration="423000" />
-      <workItem from="1618116652871" duration="101293000" />
+      <workItem from="1618116652871" duration="102648000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120726000" />
+    <option name="totallyTimeSpent" value="122081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1325" y="341" width="1274" height="818" extended-state="0" />
@@ -855,8 +855,8 @@
     <entry file="file://$PROJECT_DIR$/vue02/vue_shop/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="292">
-            <caret line="415" column="27" selection-start-line="415" selection-start-column="27" selection-end-line="415" selection-end-column="27" />
+          <first_editor relative-caret-position="306">
+            <caret line="506" lean-forward="true" selection-start-line="506" selection-end-line="506" />
             <folding>
               <element signature="e#0#37#0" expanded="true" />
             </folding>
@@ -867,12 +867,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/goods/Params.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="219" column="36" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
+        <state relative-caret-position="348">
+          <caret line="257" column="29" selection-start-line="257" selection-start-column="29" selection-end-line="257" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#el-table#0;n#el-tab-pane#0;n#el-tabs#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#el-table#0;n#el-tab-pane#1;n#el-tabs#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <marker date="1618409896622" expanded="true" signature="6911:7148" ph="..." />
+            <marker date="1618411253784" expanded="true" signature="8075:8312" ph="..." />
           </folding>
         </state>
       </provider>
