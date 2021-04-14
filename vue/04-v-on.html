@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+
+    <p v-text="msg"></p>
+    <p v-text="count_v"></p>
+    <input type="button" v-on:click="submit_click" value="点我呀">
+    <input type="button" value="增加" @click="add">
+
+</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    var app = new Vue({
+      el:"#app",
+      data:{
+        msg:"hello world",
+        count_v:0
+      },
+      //建议方法，就在方法区域里面进行修改
+      methods:{
+        submit_click(){
+          console.log("hello world")
+          alert("我要改变文字了")
+          this.msg = "cbw"
+        },
+        add(){
+          this.count_v++
+        }
+      }
+    })
+
+
+</script>
+
+</html>

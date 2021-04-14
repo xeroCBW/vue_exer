@@ -1,0 +1,446 @@
+# vue_shop
+
+> A Vue.js project
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+## 一. 使用ElementUI
+
+
+1. 安装 element-UI
+
+```shell
+npm install element-ui
+```
+
+2. 在main.js文件中导入
+
+```shell
+
+# 不导入css 文件会报错
+
+import '../src/assets/css/global.css'
+import ElementUI from 'element-ui'
+Vue.use(ElementUI)
+
+
+# 设置长宽 100%
+html,body,#app{
+
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+
+
+}
+
+```
+
+3. 导入axios实现请求
+
+```shell
+# 设置baseURL
+
+import axios from 'axios'
+
+axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
+Vue.prototype.$http = axios
+
+```
+
+
+### 二. elemet-UI 具体操作
+
+#### 2.1 message 
+用来提示消息的
+
+```javascript
+return this.$message.error("登录失败 " + res.meta.msg)
+return this.$message.success("登录失败 " + res.meta.msg)
+```
+
+
+#### 2.2 路由导航守卫
+
+
+```javascript
+
+router.beforeEach()
+
+```
+
+
+#### 2.3 使用el-container进行布局
+
+1. 第一个container,增加类类型home-container,全部写满
+
+```css
+.home-container{
+    width: 100%;
+    height: 100%;
+  }
+
+```
+
+
+2. el-xxx都是类名
+3. 优化header
+
+```javascript
+
+```
+
+4. 设置intercepter
+
+```javascript
+
+axios.interceptors.request.use(config=>{
+
+  console.log(config)
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+
+   return config
+})
+
+```
+
+5. 获取左侧菜单的数据
+
+
+```
+
+在 created期间请求数据,来获取左侧的菜单
+设置index bind 每次只会打开一个
+
+el-menu 设置 unique-opened 每次打开会关闭其他的
+
+
+```
+
+6. 设置侧边栏折叠
+
+```shell
+
+关闭transition
+动态设置width
+
+
+
+```
+
+
+7. 设置子路由
+
+```shell
+{
+      path:'/home',
+      component: Home,
+      # 设置重定向到/welcome
+      redirect:'/welcome',
+      children:[
+        {
+          path:'/welcome',
+          component:Welcome
+        }
+
+      ]
+}
+
+在main 设置 router-view
+
+    
+```
+
+
+8. 将左侧菜单改成路由连接
+
+
+````shell
+
+el-menu 开启router 模式
+将submenu 改成 sub_item.path
+
+````
+
+9. 实现用户管理界面
+
+```
+
+设置高亮激活 default-active
+
+点击时候设置 activePath ,给当前activePath赋值
+将点击的地址 放在session storage中,
+刷新页面的时候,从 session storage中取出来
+
+
+```
+  
+
+10. 使用面包屑
+
+
+11. 使用card来绘制main的主要内容
+
+```shell
+
+使用山哥系统
+:span="6"
+
+:gutter 表示两者之间的间隔
+
+
+```
+
+12. 使用table 来渲染用户列表
+
+```html
+
+
+index 可以显示前面的序列号
+
+
+
+//prop="mg_state" 这个就可以删除,
+//这个到现在就没有太多作用了 
+//v-model 里面已经进行了数据的绑定
+
+<el-table-column label="状态">
+  <template slot-scope="scope">
+    <!--这里是使用作用域插槽-->
+    <el-switch
+      v-model="scope.row.mg_state">
+    </el-switch>
+  </template>
+</el-table-column>
+
+
+
+使用switch作为开关
+
+
+```
+13. 自定义操作
+
+```shell
+设置 template 
+
+设置button
+
+设置 宽度,宽度不够
+
+设置 tooltip 让放在上面显示提示,设置:enterable="false",bool 需要动态绑定
+
+
+```
+
+
+
+14. 分页显示
+
+```pagenation
+
+设置方法和绑定数据
+
+设置 pagesize current_num 之后要重新请求数据
+
+```
+
+15. 设置用户状态
+
+```
+
+监听swicth 开关的改变
+
+@change="userStateChange"
+
+userStateChange(){
+
+}
+
+//进行字符串的替换
+
+var a = "cbw"
+var b = `this is ${a}`
+这样就直接进行字符串替换了
+
+```
+16. 实现用户搜索
+
+```javascript
+
+实现双向绑定queryInfo.query
+在搜索按钮部分填写 getUserList
+清空样式 clearable ,同时@clear ="getUserList" 绑定事件
+
+```
+
+17. 添加对话框
+
+```
+添加 el-dialog 
+
+然后绑定属性 addUserDialogVisible
+
+在click 事件处 ,直接赋值 addUserDialogVisible=false,
+或者定义方法,实现 this.addUserDialogVisible = false赋值的问题
+
+```
+
+
+18. 设置对话框的内容
+
+```shell
+
+设置form 表单,去el-form中找
+设置 rules
+设置 refs
+
+```
+
+19. 自定义验证规则
+
+```shell
+
+在data中填写 checkEmail checkMobile等相关数据
+
+```
+
+
+20. 添加关闭对话框的操作
+
+```shell
+
+使用引用,让其重置
+this.$refs.addFormRef.resetFields()
+
+```
+
+21. 修改用户的信息
+
+```
+将scope.row.id 数据传给 editDialog()
+根据id 请求用户信息
+禁用用户名这这一项 disable,让其不能编辑
+其他的和 增加 类似
+
+```
+
+22. 确认弹框
+
+```shell
+使用messagebox 来尝试
+
+一般带有$ 都是全局组件
+  
+
+
+```
+
+
+23. 设置不同颜色的标签
+
+```
+使用 v-if v-else-if v-else
+
+<el-tag v-if="scope.row.level === '0'">一级</el-tag>
+<el-tag type="success" v-else-if="scope.row.level === '1'">二级</el-tag>
+<el-tag type="warning" v-else>三级</el-tag>
+```
+
+24. 设置每列展开
+
+```
+
+<el-table-column type="expand"></el-table-column>
+```
+
+
+
+25. 实现多级权限
+
+```
+
+总共有25 个格栅, 一级占用5个,二三级占用19 个
+二三层再进行划分:分成 6 18 = 1:3 比例划分掉
+
+
+```
+
+26. 设置最小宽度
+
+```
+
+min-width: 1366px;
+
+```
+
+27. 设置居中对齐
+
+```css
+
+.vcenter{
+  display: flex;
+  align-items: center;
+
+}
+```
+
+
+28. 设置权限删除
+
+```
+el-tag 可以设置 closable
+close 是点击事件
+```
+
+
+29. 展示分配权限
+
+```shell
+
+使用树形展示
+复选框 ,唯一id
+
+<el-tree :data="rightsList" :props="treeProps" show-checkbox node-key="id"></el-tree>
+
+使用递归,获取选中的权限,然后放到一个数组中去
+
+监听对话框的关闭事件,每次关闭就清空对会话框
+
+
+getCheckedKeys
+
+getHalfCkeckedKeys
+
+```
+
+30.点击为角色分配权限
+
+```
+
+为树形控件加一个引用,treeRef
+
+在data 中定义一个role_id ,用于临时存储
+
+```
+
+31. 
+
+

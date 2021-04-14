@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<div id="app">
+    <p>cbw</p>
+    <p v-if="is_show">啦啦啦</p>
+    <input type="button" value="点我呀" @click="click_sub">
+</div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script>
+
+    var app = new Vue({
+      el:"#app",
+      data:{
+
+
+        is_show:false
+
+      },
+      methods:{
+        click_sub(){
+          this.is_show = !this.is_show
+        }
+
+
+      }
+    })
+
+
+
+
+
+</script>
+
+
+</html>

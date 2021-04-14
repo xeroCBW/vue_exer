@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+    <input type="button" value="获取更多" @click="get_more">
+
+    <ul>
+        <li v-for="(item,index) in arr" >{{item}}</li>
+    </ul>
+
+
+
+
+</div>
+
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+<script>
+
+
+    var app = new Vue({
+      el:"#app",
+      data:{
+        arr:[],
+        index:0,
+        page_size:10
+
+
+      },
+      methods:{
+
+        get_more(){
+
+          let base_url = "https://autumnfish.cn/api/joke/list?num=" + (this.index * this.page_size);
+          this.index ++;
+          var that = this
+          axios.get(base_url).then(function (response) {
+
+            let jokes = that.arr.concat(response.data.jokes)
+            that.arr = jokes
+            console.log(that.arr)
+
+          }),function (error) {
+
+            console.log("错误的请求")
+          }
+
+        }
+
+
+
+      }
+    })
+
+
+</script>
+
+
+</html>

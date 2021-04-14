@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+
+    <ul>
+        <li v-for="(item,index) in arr">
+            {{item}}---{{index}}
+            <input type="button" value="删除" @click="remove(index)">
+        </li>
+    </ul>
+
+
+    <input type="text" v-model="add_tips">
+    <input type="button" value="增加" @click="add">
+
+
+</div>
+
+
+
+
+</body>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+
+    var app = new Vue({
+      el:"#app",
+      data:{
+
+        arr:["吃饭","睡觉","打豆豆"],
+        add_tips:""
+
+
+      },
+      methods:{
+
+        add(msg){
+          msg = this.add_tips
+          this.arr.push(msg)
+
+
+        },
+        remove(index){
+          this.arr.splice(index)
+        }
+      }
+    })
+
+
+</script>
+</html>
