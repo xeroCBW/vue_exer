@@ -36,7 +36,7 @@
         <el-table :data="manyTableData" stripe border style="width: 100%">
           <el-table-column type="expand">
             <template slot-scope="scope">
-              <el-tag v-for="(item ,i ) in scope.row.attr_vals" :key="i">{{item}}</el-tag>
+              <el-tag closable @close="handleRemove(i,scope.row)" v-for="(item ,i ) in scope.row.attr_vals" :key="i">{{item}}</el-tag>
 
               <!--动态添加tag-->
               <el-input
@@ -358,7 +358,7 @@
         this.$message.success(res.meta.msg)
         this.getParamesData()
       },
-      async handleInputConfirm(row){
+      handleInputConfirm(row){
         //恢复原样
         if(row.inputValue.trim() === 0){
           row.inputValue = ''
@@ -372,8 +372,34 @@
         row.inputValue = ''
         row.inputVisible = false
 
-
       //  需要发起请求,保存本次操作
+      //  增加
+        this.saveAttrVals(row)
+
+
+      },
+      //点击按钮
+      showInput(row){
+        row.inputVisible = true
+
+        //获取焦点
+        //$nextTick 当页面上元素被重新渲染,才会执行回调中的代码
+        this.$nextTick(_ => {
+          this.$refs.saveTagInput.$refs.input.focus();
+        });
+      },
+      handleRemove(index,row){
+        //指定index 对数据进行删除
+        row.attr_vals.splice(index,1)
+
+        //删除
+        this.saveAttrVals(row)
+
+      },
+      //可以对数据进行删除 增加 ---- 只是改变数组元素的个数
+      async saveAttrVals(row){
+
+        //  需要发起请求,保存本次操作
 
         const {data:res} = await this.$http.put(`categories/${this.cateID}/attributes/${row.attr_id}`,{
           attr_name:row.attr_name,
@@ -387,31 +413,7 @@
         //刷新数据
         this.$message.success(res.meta.msg)
 
-
-
-
-
-
-
-
-
-
-
-
-      },
-      //点击按钮
-      showInput(row){
-        row.inputVisible = true
-
-        //获取焦点
-        //$nextTick 当页面上元素被重新渲染,才会执行回调中的代码
-        this.$nextTick(_ => {
-          this.$refs.saveTagInput.$refs.input.focus();
-        });
-
       }
-
-
 
 
 
