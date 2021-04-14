@@ -34,7 +34,11 @@
         <el-button type="primary" size="mini" :disabled="isButtonDisabled" @click="addParamsDialogVisible=true">添加参数</el-button>
 
         <el-table :data="manyTableData" stripe border style="width: 100%">
-          <el-table-column type="expand"></el-table-column>
+          <el-table-column type="expand">
+            <template slot-scope="scope">
+              <el-tag v-for="(item ,i ) in scope.row.attr_vals" :key="i">{{item}}</el-tag>
+            </template>
+          </el-table-column>
           <el-table-column prop="attr_id" label="参数id"></el-table-column>
           <el-table-column prop="attr_name" label="参数名称"></el-table-column>
           <el-table-column label="操作">
@@ -50,7 +54,11 @@
         <el-button type="primary" size="mini" :disabled="isButtonDisabled" @click="addParamsDialogVisible = true">添加参数</el-button>
 
         <el-table :data="onlyTableData" stripe border style="width: 100%">
-          <el-table-column type="expand"></el-table-column>
+          <el-table-column type="expand">
+            <template slot-scope="scope">
+              <el-tag v-for="(item ,i ) in scope.row.attr_vals" :key="i">{{item}}</el-tag>
+            </template>
+          </el-table-column>
           <el-table-column prop="attr_id" label="参数id"></el-table-column>
           <el-table-column prop="attr_name" label="参数名称"></el-table-column>
           <el-table-column label="操作">
@@ -207,6 +215,14 @@
         if (res.meta.status !== 200){
           return this.$message.error(res.meta.msg)
         }
+        //切割字符串,将逗号分隔的 变成一个数组
+        res.data.forEach(item=>{
+          //判断数组是否为空,如果是空的,那么就直接pass
+          item.attr_vals = item.attr_vals ? item.attr_vals.split(','):[]
+        })
+
+
+        console.log(res)
 
         if(this.activeName === 'many'){
           this.manyTableData = res.data
@@ -347,6 +363,10 @@
 
   .el-table{
     margin-top: 15px;
+  }
+
+  .el-tag{
+    margin-left: 10px;
   }
 
 </style>
