@@ -408,6 +408,14 @@ min-width: 1366px;
 ```
 el-tag 可以设置 closable
 close 是点击事件
+
+
+$confirm
+
+
+使用messagebox 的confirm 来确定删除
+
+
 ```
 
 

@@ -40,7 +40,7 @@
           <el-table-column label="操作">
             <template slot-scope="scope">
               <el-button type="primary" size="mini" icon="el-icon-edit" @click="editParamsDialogShow(scope.row.attr_id)">修改</el-button>
-              <el-button type="danger" size="mini" icon="el-icon-delete">删除</el-button>
+              <el-button type="danger" size="mini" icon="el-icon-delete" @click="removeParams(scope.row.attr_id)">删除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -55,8 +55,8 @@
           <el-table-column prop="attr_name" label="参数名称"></el-table-column>
           <el-table-column label="操作">
             <template slot-scope="scope">
-              <el-button type="primary" size="mini" icon="el-icon-edit" @click="editParamsDialogShow">修改</el-button>
-              <el-button type="danger" size="mini" icon="el-icon-delete">删除</el-button>
+              <el-button type="primary" size="mini" icon="el-icon-edit" @click="editParamsDialogShow(scope.row.attr_id)">修改</el-button>
+              <el-button type="danger" size="mini" icon="el-icon-delete" @click="removeParams(scope.row.attr_id)">删除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -274,12 +274,36 @@
           this.$message.success(res.meta.msg)
           //刷新数据
           this.getParamesData()
-          this.edaramsDialogVisible = false
+          this.editParamsDialogVisible = false
 
         })
+      },
+
+      //根据id 删除 param
+      async removeParams(attr_id){
+
+        const confirmResult = await this.$confirm('此操作将永久删除该参数, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).catch(err=>{
+          return err
+        })
+        //  如果用户确认删除,返回值是str
+        //  如果用户取消,返回的错误,可以使用catch ,返回的是 cancel
+        if(confirmResult !=='confirm'){
+          return this.$message.info("已取消删除")
+        }
 
 
+        const {data:res} = await this.$http.delete(`categories/${this.cateID}/attributes/${attr_id}`)
 
+        if (res.meta.status !== 200){
+          return this.$message.error(res.meta.msg)
+        }
+        //刷新数据
+        this.$message.success(res.meta.msg)
+        this.getParamesData()
 
       }
 
