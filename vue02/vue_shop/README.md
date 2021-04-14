@@ -468,10 +468,11 @@ tree-table 进行渲染
 ```
 
 computed(){
-
-来计算 计算属性
  
 }
+其他地方可以直接访问该属性
+
+get 请求要加params post 不需要
 
 ```
 

@@ -29,11 +29,38 @@
     </el-row>
 
     <el-tabs @tab-click="handleTabClick"  v-model="activeName">
-      <el-tab-pane label="动态参数" name="first">
-        <el-button type="primary" size="mini" :disabled="isButtonDisabled">添加参数</el-button>
+      <el-tab-pane label="动态参数" name="many">
+
+        <el-button type="primary" size="mini" :disabled="isButtonDisabled" @click="addParamsDialogVisible=true">添加参数</el-button>
+
+        <el-table :data="manyTableData" stripe border style="width: 100%">
+          <el-table-column type="expand"></el-table-column>
+          <el-table-column prop="attr_id" label="参数id"></el-table-column>
+          <el-table-column prop="attr_name" label="参数名称"></el-table-column>
+          <el-table-column label="操作">
+            <template slot-scope="scope">
+              <el-button type="primary" size="mini" icon="el-icon-edit" @click="editParamsDialogShow(scope.row.attr_id)">修改</el-button>
+              <el-button type="danger" size="mini" icon="el-icon-delete">删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+
       </el-tab-pane>
-      <el-tab-pane label="静态属性" name="second">
-        <el-button type="primary" size="mini" :disabled="isButtonDisabled">添加参数</el-button>
+      <el-tab-pane label="静态属性" name="only">
+        <el-button type="primary" size="mini" :disabled="isButtonDisabled" @click="addParamsDialogVisible = true">添加参数</el-button>
+
+        <el-table :data="onlyTableData" stripe border style="width: 100%">
+          <el-table-column type="expand"></el-table-column>
+          <el-table-column prop="attr_id" label="参数id"></el-table-column>
+          <el-table-column prop="attr_name" label="参数名称"></el-table-column>
+          <el-table-column label="操作">
+            <template slot-scope="scope">
+              <el-button type="primary" size="mini" icon="el-icon-edit" @click="editParamsDialogShow">修改</el-button>
+              <el-button type="danger" size="mini" icon="el-icon-delete">删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+
       </el-tab-pane>
     </el-tabs>
 
@@ -42,6 +69,55 @@
 
   </el-card>
 
+<!--添加参数的对话框-->
+  <el-dialog
+    @close="addParamsDialogClose"
+    :title="'修改' +titleText"
+    :visible.sync="addParamsDialogVisible"
+    width="50%">
+
+    <el-form
+      :model="addParamsForm"
+      :rules="addParamsFormRules"
+      ref="addParamsFormRef"
+      label-width="120px">
+
+      <el-form-item :label="titleText" prop="attr_name">
+        <el-input v-model="addParamsForm.attr_name"></el-input>
+      </el-form-item>
+
+    </el-form>
+
+    <span slot="footer" class="dialog-footer">
+    <el-button @click="addParamsDialogVisible = false">取 消</el-button>
+    <el-button type="primary" @click="addParams">确 定</el-button>
+  </span>
+  </el-dialog>
+
+  <!--修改参数的对话框-->
+  <el-dialog
+    @close="editParamsDialogClose"
+    :title="'修改' +titleText"
+    :visible.sync="editParamsDialogVisible"
+    width="50%">
+
+    <el-form
+      :model="editParamsForm"
+      :rules="editParamsFormRules"
+      ref="editParamsFormRef"
+      label-width="120px">
+
+      <el-form-item :label="titleText" prop="attr_name">
+        <el-input v-model="editParamsForm.attr_name"></el-input>
+      </el-form-item>
+
+    </el-form>
+
+    <span slot="footer" class="dialog-footer">
+    <el-button @click="editParamsDialogVisible = false">取 消</el-button>
+    <el-button type="primary" @click="editParams">确 定</el-button>
+  </span>
+  </el-dialog>
 
 </div>
 </template>
@@ -66,7 +142,32 @@
         },
         selectedCategoryKeys:[],
         //被激活页签的名称
-        activeName:'first'
+        activeName:'many',
+        manyTableData:[],
+        onlyTableData:[],
+
+        //增加参数对话框
+        addParamsDialogVisible:false,
+        addParamsForm:{
+          attr_name:''
+        },
+        addParamsFormRules:{
+          attr_name:[
+            { required: true, message: '请输入属性', trigger: 'blur' }
+          ]
+        },
+
+        //修改参数对话框
+        editParamsDialogVisible:false,
+        editParamsForm:{
+          attr_name:''
+        },
+        editParamsFormRules:{
+          attr_name:[
+            { required: true, message: '请输入属性', trigger: 'blur' }
+          ]
+        },
+
       }
     },
     methods:{
@@ -83,19 +184,108 @@
       },
       parentCategoryChange(){
 
+        this.getParamesData()
+
+      },
+      handleTabClick(){
+
+        this.getParamesData()
+
+      },
+      //获取参数列表数据
+      async getParamesData(){
+
         if(this.selectedCategoryKeys.length !== 3){
           //如果选中的不是三级,就把选中数组进行清空
           this.selectedCategoryKeys = []
 
           return
         }
-        console.log('选中的是三级分类')
+
+        //  根据所选三级分类id ,获取选中的参数
+        const {data:res} = await this.$http.get(`categories/${this.cateID}/attributes`,{params:{sel:this.activeName}})
+        if (res.meta.status !== 200){
+          return this.$message.error(res.meta.msg)
+        }
+
+        if(this.activeName === 'many'){
+          this.manyTableData = res.data
+        }else{
+          this.onlyTableData = res.data
+        }
 
       },
-      handleTabClick(){
+      addParamsDialogClose(){
+        //清除上一次填写的内容
+        this.$refs.addParamsFormRef.resetFields()
+      },
+      //添加参数
+      addParams(){
+        this.$refs.addParamsFormRef.validate(async valid=>{
+          if(!valid)return
+          const {data:res} = await this.$http.post(`categories/${this.cateID}/attributes`,{
+            attr_name:this.addParamsForm.attr_name,
+            attr_sel:this.activeName
+          })
+
+          if (res.meta.status !== 201){
+            return this.$message.error(res.meta.msg)
+          }
+
+          this.$message.success(res.meta.msg)
+          this.addParamsDialogVisible = false
+          //刷新数据
+          this.getParamesData()
+
+        })
+      },
+      editParamsDialogClose(){
+
+      },
+      async editParamsDialogShow(attr_id){
+
+        //查询 当前参数的信息
+       const {data:res} = await this.$http.get(`categories/${this.cateID}/attributes/${attr_id}`,{
+          params:{attr_sel:this.activeName}
+        })
+
+        if (res.meta.status !== 200){
+          return this.$message.error(res.meta.msg)
+        }
+        this.editParamsForm = res.data
+
+        this.editParamsDialogVisible = true
+
+      },
+      editParams(){
+
+        this.$refs.editParamsFormRef.validate(async valid=>{
+
+          if(!valid)return
+
+          const {data:res} = await this.$http.put(`categories/${this.cateID}/attributes/${this.editParamsForm.attr_id}`,{
+            attr_name:this.editParamsForm.attr_name,
+            attr_sel:this.activeName
+          })
+          if (res.meta.status !== 200){
+            return this.$message.error(res.meta.msg)
+          }
+
+          this.$message.success(res.meta.msg)
+          //刷新数据
+          this.getParamesData()
+          this.edaramsDialogVisible = false
+
+        })
+
+
 
 
       }
+
+
+
+
 
     },
     computed:{
@@ -108,6 +298,16 @@
         }else {
           return false
         }
+      },
+      cateID(){
+
+        if(this.selectedCategoryKeys.length === 3){
+          return this.selectedCategoryKeys[2]
+        }
+        return null
+      },
+      titleText(){
+        return this.activeName === 'many' ? '动态参数':'静态参数';
 
       }
     }
@@ -118,6 +318,10 @@
 
 
   .cat-opt{
+    margin-top: 15px;
+  }
+
+  .el-table{
     margin-top: 15px;
   }
 
