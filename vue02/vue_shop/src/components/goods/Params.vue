@@ -45,8 +45,8 @@
                 v-model="scope.row.inputValue"
                 ref="saveTagInput"
                 size="small"
-                @keyup.enter.native="handleInputConfirm"
-                @blur="handleInputConfirm"
+                @keyup.enter.native="handleInputConfirm(scope.row)"
+                @blur="handleInputConfirm(scope.row)"
               >
               </el-input>
               <el-button v-else class="button-new-tag" size="small" @click="showInput(scope.row)">+ New Tag</el-button>
@@ -80,8 +80,8 @@
                 v-model="inputValue"
                 ref="saveTagInput"
                 size="small"
-                @keyup.enter.native="handleInputConfirm"
-                @blur="handleInputConfirm"
+                @keyup.enter.native="handleInputConfirm(scope.row)"
+                @blur="handleInputConfirm(scope.row)"
               >
               </el-input>
               <el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</el-button>
@@ -358,12 +358,56 @@
         this.$message.success(res.meta.msg)
         this.getParamesData()
       },
-      handleInputConfirm(){
+      async handleInputConfirm(row){
+        //恢复原样
+        if(row.inputValue.trim() === 0){
+          row.inputValue = ''
+          //恢复原样,文本框隐藏
+          row.inputVisible = false
+          return
+        }
+
+      //  没有没有return ,则证明输入的内容需要后续处理
+        row.attr_vals.push(row.inputValue.trim())
+        row.inputValue = ''
+        row.inputVisible = false
+
+
+      //  需要发起请求,保存本次操作
+
+        const {data:res} = await this.$http.put(`categories/${this.cateID}/attributes/${row.attr_id}`,{
+          attr_name:row.attr_name,
+          attr_sel:row.attr_sel,
+          attr_vals:row.attr_vals.join(','),
+        })
+
+        if (res.meta.status !== 200){
+          return this.$message.error(res.meta.msg)
+        }
+        //刷新数据
+        this.$message.success(res.meta.msg)
+
+
+
+
+
+
+
+
+
+
+
 
       },
       //点击按钮
       showInput(row){
         row.inputVisible = true
+
+        //获取焦点
+        //$nextTick 当页面上元素被重新渲染,才会执行回调中的代码
+        this.$nextTick(_ => {
+          this.$refs.saveTagInput.$refs.input.focus();
+        });
 
       }
 
