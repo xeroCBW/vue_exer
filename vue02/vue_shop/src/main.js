@@ -14,6 +14,10 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 
+//导入 nprogress
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 Vue.use(ElementUI)
 
 //使用VueQuillEditor
@@ -26,12 +30,27 @@ axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
 //设置token
 axios.interceptors.request.use(config=>{
 
+  //显示进度条
+  NProgress.start()
+
   // console.log(config)
   // console.log( window.sessionStorage.getItem('token'))
+
   config.headers.Authorization = window.sessionStorage.getItem('token')
 
   return config
 })
+
+
+axios.interceptors.response.use(config=>{
+
+  //隐藏进度条
+  NProgress.done()
+
+  return config
+})
+
+
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
