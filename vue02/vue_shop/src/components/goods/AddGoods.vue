@@ -111,6 +111,18 @@
 
    </el-card>
 
+    <!--图片预览-->
+
+    <el-dialog
+      class="previewImgae"
+      title="图片预览"
+      :visible.sync="previewDialogVisible"
+      width="50%">
+      <img :src="previewPath" alt="">
+
+    </el-dialog>
+
+
   </div>
     
 </template>
@@ -168,7 +180,9 @@
         headerObj:{
           Authorization:window.sessionStorage.getItem('token')
         },
-        // 上传文件路径
+        //预览路径
+        previewPath:'',
+        previewDialogVisible:false
 
 
 
@@ -232,10 +246,28 @@
 
       },
       //处理图片预览效果
-      handlePreview(){
+      handlePreview(file){
+
+
+        this.previewPath = file.response.data.url
+        this.previewDialogVisible = true
+
+
+
+
+
 
       },
-      handleRemove(){
+      handleRemove(file){
+        console.log(file)
+
+        const filePath = file.response.data.tmp_path
+        //找到图片
+        const i = this.addGoodsForm.pics.findIndex(x=>{
+          x.pic === filePath
+        })
+        //删除图片
+        this.addGoodsForm.pics.splice(i)
 
       },
       //监听图片上传成功
@@ -282,6 +314,9 @@
 
   .el-checkbox{
     margin:0 5px 0 0 !important;
+  }
+  .previewImgae{
+    width: 100%;
   }
 
 </style>
