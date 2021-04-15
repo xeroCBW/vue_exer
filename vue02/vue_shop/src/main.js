@@ -48,7 +48,7 @@ Vue.filter('dateFormat',function (originVal) {
 
   const hh = (dt.getHours() + '').padStart(2,'0')
   const mm = (dt.getMinutes() + '').padStart(2,'0')
-  const ss = (dt.seconds() + '').padStart(2,'0')
+  const ss = (dt.getSeconds() + '').padStart(2,'0')
 
   return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
 
