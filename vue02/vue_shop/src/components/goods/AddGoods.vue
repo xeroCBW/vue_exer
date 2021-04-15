@@ -87,7 +87,21 @@
 
          </el-tab-pane>
 
-         <el-tab-pane label="商品图片" name="3">商品图片</el-tab-pane>
+         <!--图片上传-->
+         <el-tab-pane label="商品图片" name="3">
+           <!--action 图片要上传的后台api地址-->
+           <el-upload
+             :action="uploadURL"
+             :on-preview="handlePreview"
+             :on-remove="handleRemove"
+             list-type="picture">
+             <el-button size="small" type="primary">点击上传</el-button>
+             <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+           </el-upload>
+
+
+
+         </el-tab-pane>
          <el-tab-pane label="商品内容" name="4">商品内容</el-tab-pane>
        </el-tabs>
 
@@ -145,7 +159,8 @@
           // checkStrictly:true
         },
         manyTableData:[],
-        onlyTableData:[]
+        onlyTableData:[],
+        uploadURL:"https://www.liulongbin.top:8888/api/private/v1/upload"
 
 
       }
@@ -203,12 +218,15 @@
             item.attr_vals = item.attr_vals?item.attr_vals.split(','):[]
           })
           this.onlyTableData = res.data
-          
           console.log(res)
-
         }
 
+      },
+      //处理图片预览效果
+      handlePreview(){
 
+      },
+      handleRemove(){
 
       }
 
