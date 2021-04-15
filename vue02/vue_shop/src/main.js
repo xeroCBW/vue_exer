@@ -31,6 +31,22 @@ Vue.config.productionTip = false
 Vue.component('tree-table',TreeTable)
 
 
+Vue.filter('dateFormat',function (originVal) {
+  const dt = new Date(originVal)
+  const y = dt.getFullYear()
+  //月份是从0 开始计算的
+  const m = (dt.getMonth() + 1 +'').padStart(2,'0') // 不足的地方以0 来进行填充
+  const d = (dt.getDate() + '').padStart(2,'0') // 不足的地方以0 来进行填充
+
+  const hh = (dt.getHours() + '').padStart(2,'0')
+  const mm = (dt.getMinutes() + '').padStart(2,'0')
+  const ss = (dt.seconds() + '').padStart(2,'0')
+
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+
+})
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

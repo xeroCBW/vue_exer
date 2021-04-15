@@ -16,6 +16,8 @@
       :closable="false"
       show-icon>
     </el-alert>
+
+    <!--cascader选择商品分类-->
     <el-row class="cat-opt">
       <el-col>
         <span>选择商品分类:</span>
@@ -33,7 +35,7 @@
 
         <el-button type="primary" size="mini" :disabled="isButtonDisabled" @click="addParamsDialogVisible=true">添加参数</el-button>
 
-        <el-table :data="manyTableData" stripe border style="width: 100%">
+        <el-table :data="manyTableData" stripe border>
           <el-table-column type="expand">
             <template slot-scope="scope">
               <el-tag closable @close="handleRemove(i,scope.row)" v-for="(item ,i ) in scope.row.attr_vals" :key="i">{{item}}</el-tag>
@@ -46,8 +48,7 @@
                 ref="saveTagInput"
                 size="small"
                 @keyup.enter.native="handleInputConfirm(scope.row)"
-                @blur="handleInputConfirm(scope.row)"
-              >
+                @blur="handleInputConfirm(scope.row)">
               </el-input>
               <el-button v-else class="button-new-tag" size="small" @click="showInput(scope.row)">+ New Tag</el-button>
 
@@ -68,24 +69,23 @@
       <el-tab-pane label="静态属性" name="only">
         <el-button type="primary" size="mini" :disabled="isButtonDisabled" @click="addParamsDialogVisible = true">添加参数</el-button>
 
-        <el-table :data="onlyTableData" stripe border style="width: 100%">
+        <el-table :data="onlyTableData" stripe border>
           <el-table-column type="expand">
             <template slot-scope="scope">
               <el-tag v-for="(item ,i ) in scope.row.attr_vals" :key="i">{{item}}</el-tag>
 
               <!--动态添加tag-->
+
               <el-input
                 class="input-new-tag"
-                v-if="inputVisible"
-                v-model="inputValue"
+                v-if="scope.row.inputVisible"
+                v-model="scope.row.inputValue"
                 ref="saveTagInput"
                 size="small"
                 @keyup.enter.native="handleInputConfirm(scope.row)"
-                @blur="handleInputConfirm(scope.row)"
-              >
+                @blur="handleInputConfirm(scope.row)">
               </el-input>
-              <el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</el-button>
-
+              <el-button v-else class="button-new-tag" size="small" @click="showInput(scope.row)">+ New Tag</el-button>
 
 
             </template>
@@ -101,6 +101,9 @@
         </el-table>
 
       </el-tab-pane>
+
+
+
     </el-tabs>
 
 
@@ -226,6 +229,7 @@
       },
       parentCategoryChange(){
 
+
         this.getParamesData()
 
       },
@@ -240,6 +244,9 @@
         if(this.selectedCategoryKeys.length !== 3){
           //如果选中的不是三级,就把选中数组进行清空
           this.selectedCategoryKeys = []
+
+          this.manyTableData = []
+          this.onlyTableData = []
 
           return
         }

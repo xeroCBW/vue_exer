@@ -284,9 +284,9 @@
     margin-top: 15px;
   }
 
-  .el-cascader{
-    width: 100%;
-  }
+  /*.el-cascader{*/
+    /*width: 100%;*/
+  /*}*/
 
 
 

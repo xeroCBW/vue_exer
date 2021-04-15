@@ -505,8 +505,12 @@ get 请求要加params post 不需要
 在 每个item 中动态添加 item.inputVisiable = false tem.inputValue = false 
 
 
+tag 的删除和增加 都是在 更新数组元素个数
+
 
 ```
+
+35. 创建过滤器
 
 
 
