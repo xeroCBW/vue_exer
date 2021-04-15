@@ -586,6 +586,37 @@ tab-click
 ```
 
 
+//导入富文本编辑器
+import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+//使用VueQuillEditor
+Vue.use(VueQuillEditor)
+
+<!--富文本编辑器-->
+<quill-editor v-model="addGoodsForm.goods_introduce">
+</quill-editor>
+
+本质是一个str
+
+
+<p>xxx</p>
+
+
+```
+
+
+
+49. 使用深拷贝,导入lodash包
+
+```
+import _ from 'lodash'
+
+
+
+双向绑定的数据,不要随意改变其性质,例如array 变成 str ,这样类型不匹配容易报错
 
 ```
 

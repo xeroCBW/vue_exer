@@ -107,13 +107,10 @@
          <el-tab-pane label="商品内容" name="4">
            <!--富文本编辑器-->
            <quill-editor v-model="addGoodsForm.goods_introduce">
-
            </quill-editor>
 
            <!--添加商品-->
-           <el-button type="primary" class="btn-add">添加商品</el-button>
-
-
+           <el-button type="primary" class="btn-add" @click="addGoods">添加商品</el-button>
 
          </el-tab-pane>
        </el-tabs>
@@ -133,13 +130,14 @@
 
     </el-dialog>
 
-
-
   </div>
     
 </template>
 
 <script>
+
+  import _ from 'lodash'
+
   export default {
     name: "AddGoods",
     created(){
@@ -157,7 +155,8 @@
           goods_number:0,
           goods_cat:[],
           pics:[],
-          goods_introduce:''
+          goods_introduce:'',
+          attrs:[]
 
 
         },
@@ -267,10 +266,6 @@
         this.previewDialogVisible = true
 
 
-
-
-
-
       },
       handleRemove(file){
         console.log(file)
@@ -293,6 +288,51 @@
 
         console.log(this.addGoodsForm.pics)
 
+      },
+      //添加商品
+      addGoods(){
+
+        this.$refs.addGoodsFormRef.validate(async valid=>{
+
+          if(!valid)return this.$message.error("请填写必要的信息")
+
+          //使用深拷贝
+          const  form = _.lodash.cloneDeep(this.addGoodsForm)
+          form.goods_cat = form.goods_cat.join(',')
+
+          //处理动态参数
+          this.manyTableData.forEach(item => {
+            const newInfo = {
+              attr_id:item.attr_id,
+              attr_value:item.attr_vals.join(',')
+            }
+            this.addGoodsForm.attrs.push(newInfo)
+          })
+
+          //处理静态属性
+          this.onlyTableData.forEach(item => {
+            const newInfo = {
+              attr_id:item.attr_id,
+              attr_value:item.attr_vals.join(',')
+            }
+            this.addGoodsForm.attrs.push(newInfo)
+          })
+
+          form.attrs = this.addGoodsForm.attrs
+
+
+
+          const {data:res} = await this.$http.post('goods',form)
+          if (res.meta.status !== 201){
+            return this.$message.error(res.meta.msg)
+          }
+
+          this.$message.success(res.meta.msg)
+
+        //  返回商品首页
+          this.$router.push('/goods')
+
+        })
 
       }
 
