@@ -666,6 +666,22 @@ lodash.merge
 
 1. 生成打包报告
 
+```
+npm install babel-plugin-transform-remove-console --save-dev
+
+//移除 console
+"plugins": ["transform-vue-jsx", "transform-runtime","transform-remove-console"]
+
+npm run build 打包
+
+
+
+vue-cli-service build --report
+
+
+```
+
+
 2. 第三方库使用CDN
 
 3. Elemnt-UI 按需加载
@@ -674,4 +690,14 @@ lodash.merge
 
 5. 首页内容定制
 
+
+
+### 上线
+
+
+```
+
+
+
+```
 
