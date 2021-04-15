@@ -5,7 +5,7 @@ html,body,#app{
   padding: 0%;
   /*设置最小宽度*/
   min-width: 1080px;
-
+  text-align: left !important;
 
 }
 
@@ -26,4 +26,9 @@ html,body,#app{
 .el-pagination{
 
   margin-top: 15px;
+}
+
+
+.ql-editor{
+  min-height: 300px;
 }
