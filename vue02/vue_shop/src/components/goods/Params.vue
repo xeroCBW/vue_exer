@@ -18,8 +18,8 @@
     </el-alert>
 
     <!--cascader选择商品分类-->
-    <el-row class="cat-opt">
-      <el-col>
+    <el-row class="cat-opt" style="text-align: left">
+      <el-col >
         <span>选择商品分类:</span>
         <el-cascader
           :props="categoryProps"

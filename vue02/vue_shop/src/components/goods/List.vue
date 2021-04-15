@@ -13,12 +13,12 @@
 
       <el-row :gutter="10">
         <el-col :span="7">
-          <el-input placeholder="请输入内容" v-model="queryInfo.query" clearable @clear="getUsersList">
-            <el-button slot="append" icon="el-icon-search" @click="getUsersList"></el-button>
+          <el-input placeholder="请输入内容" v-model="queryInfo.query" clearable @clear="getGoodsList">
+            <el-button slot="append" icon="el-icon-search" @click="getGoodsList"></el-button>
           </el-input>
         </el-col>
         <el-col :span="3">
-          <el-button type="primary" @click="dialogVisible">添加商品</el-button>
+          <el-button type="primary" @click="goAddGoodsPage">添加商品</el-button>
         </el-col>
       </el-row>
 
@@ -35,8 +35,10 @@
           </template>
         </el-table-column>
         <el-table-column label="操作" width="130px" >
-          <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
-          <el-button type="primary" icon="el-icon-delete" size="mini"></el-button>
+          <template slot-scope="scope">
+            <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
+            <el-button type="primary" icon="el-icon-delete" size="mini" @close="removeGoodsById(scope.row.goods_id)"></el-button>
+          </template>
         </el-table-column>
 
 
@@ -66,7 +68,7 @@
     created(){
 
 
-      this.getUsersList()
+      this.getGoodsList()
 
     },
     data(){
@@ -85,7 +87,7 @@
       }
     },
     methods:{
-      async getUsersList(){
+      async getGoodsList(){
 
         const {data:res}  = await this.$http.get('goods',{params:this.queryInfo})
 
@@ -96,19 +98,47 @@
         this.total = res.data.total
 
       },
-      dialogVisible(){
+      goAddGoodsPage(){
+        //进行页面的跳转
+        this.$router.push('/goods/add')
 
       },
       handleSizeChange(new_size){
 
         this.queryInfo.pagesize = new_size
-        this.getUsersList()
+        this.getGoodsList()
 
       },
       handleCurrentChange(cur_num){
 
         this.queryInfo.pagenum = cur_num
-        this.getUsersList()
+        this.getGoodsList()
+
+      },
+      async removeGoodsById(goods_id){
+
+        const confirmResult = await this.$confirm('此操作将永久删除该商品, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).catch(err=>{
+          return err
+        })
+        //  如果用户确认删除,返回值是str
+        //  如果用户取消,返回的错误,可以使用catch ,返回的是 cancel
+        if(confirmResult !=='confirm'){
+          return this.$message.info("已取消删除")
+        }
+
+        const {data:res} = await this.$http.delete(`goods/${id}`)
+        if (res.meta.status !== 200){
+          return this.$message.error(res.meta.msg)
+        }
+
+        //  确认删除
+        this.$message.success('删除成功')
+        //  刷新商品列表
+        this.getGoodsList()
 
       }
     }

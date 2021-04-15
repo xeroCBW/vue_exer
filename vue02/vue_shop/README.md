@@ -510,10 +510,47 @@ tag 的删除和增加 都是在 更新数组元素个数
 
 ```
 
-35. 创建过滤器
+35. 创建过滤器,设置时间格式
+
+```
+
+Vue.filter('dateFormat',function (originVal) {
+  const dt = new Date(originVal)
+  const y = dt.getFullYear()
+  //月份是从0 开始计算的
+  const m = (dt.getMonth() + 1 +'').padStart(2,'0') // 不足的地方以0 来进行填充
+  const d = (dt.getDate() + '').padStart(2,'0') // 不足的地方以0 来进行填充
+
+  const hh = (dt.getHours() + '').padStart(2,'0')
+  const mm = (dt.getMinutes() + '').padStart(2,'0')
+  const ss = (dt.seconds() + '').padStart(2,'0')
+
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+
+})
+
+```
 
 
 
 
 
+36. 设置进度条居中
+
+```
+align-cente
+
+
+```
+
+37. 设置 tabs
+
+
+```
+设置左边显示文本
+
+:tab-position="'left'"
+
+
+```
 
