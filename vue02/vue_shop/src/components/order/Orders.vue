@@ -73,14 +73,18 @@
         width="50%" >
         <!--内容区域-->
         <!--实现数据的双向绑定-->
-        <el-form :model="editAddressForm" :rules="editAddressFormRules" ref="editAddressFormRef" label-width="80px">
-          <el-form-item label="省市区/县" prop="address1" label-width="100px">
+        <el-form
+          :model="editAddressForm"
+          :rules="editAddressFormRules"
+          ref="editAddressFormRef"
+          label-width="100px">
+          <el-form-item label="省市区/县" prop="address1">
 
-            <el-cascader :options="cityData" :model="editAddressForm.address1">
+            <el-cascader :options="cityData" v-model="editAddressForm.address1" :props="orderProps">
             </el-cascader>
 
           </el-form-item>
-          <el-form-item label="详细地址" prop="address2" label-width="100px">
+          <el-form-item label="详细地址" prop="address2">
             <el-input v-model="editAddressForm.address2"></el-input>
           </el-form-item>
         </el-form>
@@ -135,7 +139,10 @@
 
         },
         //属性值和属性名 重名 ,可以简写 cityData:cityData --> cityData
-        cityData
+        cityData,
+        orderProps:{
+          expandTrigger:'hover',
+        }
 
       }
     },
@@ -166,11 +173,8 @@
       },
       editAddressDialogClose(){
 
-
         this.$refs.editAddressFormRef.resetFields()
 
-
-        
       },
       editAddress(){
         
