@@ -632,4 +632,22 @@ import _ from 'lodash'
 ```
 
 
+51. message 和 confrim 都默认使用 vue自带的了
+
+```
+
+Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.firm
+
+```
+
+
+52. 使用 timeline
+
+```
+time-line 默认是2.6 版本以后才出来的
+
+```
+
+
 

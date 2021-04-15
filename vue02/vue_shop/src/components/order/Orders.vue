@@ -44,7 +44,7 @@
           <!--<el-table-column prop="consignee_addr" label="发货地址"></el-table-column>-->
           <el-table-column  label="操作" width="130px">
             <el-button type="primary" icon="el-icon-edit" size="mini" @click="editAddressDialogVisible = true"></el-button>
-            <el-button type="success" icon="el-icon-location-outline" size="mini"></el-button>
+            <el-button type="success" icon="el-icon-location-outline" size="mini" @click="progressBoxShow"></el-button>
           </el-table-column>
 
         </el-table>
@@ -99,6 +99,26 @@
       </el-dialog>
 
 
+
+      <!--物流进度对话框-->
+      <el-dialog
+        title="物流进度"
+        :visible.sync="logicProgressDialogVisible"
+        @close="logicProgressDialogClose"
+        width="50%" >
+
+        <el-timeline >
+          <el-timeline-item
+            v-for="(activity, index) in loginProgressInfo"
+            :key="index"
+            :timestamp="activity.time">
+            {{activity.context}}
+          </el-timeline-item>
+        </el-timeline>
+
+      </el-dialog>
+
+
     </div>
 </template>
 
@@ -142,7 +162,10 @@
         cityData,
         orderProps:{
           expandTrigger:'hover',
-        }
+        },
+
+        logicProgressDialogVisible:false,
+        loginProgressInfo :{}
 
       }
     },
@@ -156,7 +179,7 @@
         this.ordersList = res.data.goods
         this.total = res.data.total
 
-        console.log(res)
+        // console.log(res)
 
       },
       handleSizeChange(pagesize){
@@ -178,7 +201,28 @@
       },
       editAddress(){
         
+      },
+      async progressBoxShow(){
+      //  进度条展示
+
+
+        const {data:res} = await this.$http.get('/kuaidi/804909574412544580')
+        if (res.meta.status !== 200)return this.message.error(res.meta.msg)
+
+        this.loginProgressInfo = res.data
+
+        console.log(res)
+
+
+        this.logicProgressDialogVisible = true
+
+
+      },
+
+      logicProgressDialogClose(){
+
       }
+
     }
   }
 </script>

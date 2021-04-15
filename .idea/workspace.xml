@@ -13,14 +13,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/order/Orders.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
+            <state relative-caret-position="257">
+              <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#el-table#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="e#140#161#0" expanded="true" />
+                <element signature="e#421#466#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue02/vue_shop/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="915">
+              <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -37,23 +59,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue02/vue_shop/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="396">
-                <caret line="629" column="13" selection-start-line="629" selection-start-column="13" selection-end-line="629" selection-end-column="13" />
+              <first_editor relative-caret-position="381">
+                <caret line="647" column="25" selection-start-line="647" selection-start-column="25" selection-end-line="647" selection-end-column="25" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/order/city_data2017_element.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -112,18 +125,6 @@
                 <caret line="122" column="21" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/user/Users.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1154">
-              <caret line="227" column="12" selection-start-line="224" selection-start-column="10" selection-end-line="227" selection-end-column="12" />
-              <folding>
-                <element signature="n#style#0;n#el-table#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -230,8 +231,8 @@
         <option value="$PROJECT_DIR$/vue02/vue_shop/src/router/index.js" />
         <option value="$PROJECT_DIR$/vue02/vue_shop/src/main.js" />
         <option value="$PROJECT_DIR$/vue02/vue_shop/src/components/order/city.js" />
-        <option value="$PROJECT_DIR$/vue02/vue_shop/src/components/order/Orders.vue" />
         <option value="$PROJECT_DIR$/vue02/vue_shop/README.md" />
+        <option value="$PROJECT_DIR$/vue02/vue_shop/src/components/order/Orders.vue" />
       </list>
     </option>
   </component>
@@ -264,7 +265,7 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1371" />
+    <option name="x" value="1284" />
     <option name="y" value="340" />
     <option name="width" value="1274" />
     <option name="height" value="818" />
@@ -467,15 +468,15 @@
       <workItem from="1617871322574" duration="158000" />
       <workItem from="1617885567477" duration="1659000" />
       <workItem from="1617948539424" duration="423000" />
-      <workItem from="1618116652871" duration="127641000" />
+      <workItem from="1618116652871" duration="128960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147074000" />
+    <option name="totallyTimeSpent" value="148393000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1371" y="340" width="1274" height="818" extended-state="0" />
+    <frame x="1284" y="340" width="1274" height="818" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.28890663" />
@@ -650,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -783,17 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#140#161#0" expanded="true" />
-            <element signature="e#421#466#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/order/city.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -862,16 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/order/Orders.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
-          <folding>
-            <element signature="n#style#0;n#el-table#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -892,13 +865,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#140#161#0" expanded="true" />
+            <element signature="e#421#466#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vue02/vue_shop/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="396">
-            <caret line="629" column="13" selection-start-line="629" selection-start-column="13" selection-end-line="629" selection-end-column="13" />
+          <first_editor relative-caret-position="381">
+            <caret line="647" column="25" selection-start-line="647" selection-start-column="25" selection-end-line="647" selection-end-column="25" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/order/Orders.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#el-table#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
