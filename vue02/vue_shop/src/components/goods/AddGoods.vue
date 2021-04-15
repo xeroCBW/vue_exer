@@ -73,15 +73,20 @@
              <el-checkbox-group v-model="item.attr_vals">
                <el-checkbox :label="item1" v-for="(item1,i1) in item.attr_vals" :key="i1" border></el-checkbox>
              </el-checkbox-group>
-
            </el-form-item>
-
-
 
          </el-tab-pane>
 
          <!--商品属性-->
-         <el-tab-pane label="商品属性" name="2">商品属性</el-tab-pane>
+         <el-tab-pane label="商品属性" name="2">
+
+           <el-form-item v-for="item in onlyTableData" :label="item.attr_name" :key="item.attr_id" >
+             <!--复选框-->
+             <el-input v-model="item.attr_vals"></el-input>
+           </el-form-item>
+
+         </el-tab-pane>
+
          <el-tab-pane label="商品图片" name="3">商品图片</el-tab-pane>
          <el-tab-pane label="商品内容" name="4">商品内容</el-tab-pane>
        </el-tabs>
@@ -140,6 +145,7 @@
           // checkStrictly:true
         },
         manyTableData:[],
+        onlyTableData:[]
 
 
       }
@@ -175,21 +181,35 @@
         if(this.activeIndex === '1'){
 
           const {data:res} = await this.$http.get(`categories/${this.cateID}/attributes`,{params:{sel:'many'}})
-
           if (res.meta.status !== 200){
             return this.$message.error( res.meta.msg)
           }
 
-          console.log(res)
           res.data.forEach(item =>{
-
             item.attr_vals = item.attr_vals?item.attr_vals.split(','):[]
-
           })
-
           this.manyTableData = res.data
 
+        }else if(this.activeIndex === '2'){
+
+
+
+          // 获取only的参数
+          const {data:res} = await this.$http.get(`categories/${this.cateID}/attributes`,{params:{sel:'only'}})
+          if (res.meta.status !== 200){
+            return this.$message.error( res.meta.msg)
+          }
+          res.data.forEach(item =>{
+            item.attr_vals = item.attr_vals?item.attr_vals.split(','):[]
+          })
+          this.onlyTableData = res.data
+          
+          console.log(res)
+
         }
+
+
+
       }
 
     },
