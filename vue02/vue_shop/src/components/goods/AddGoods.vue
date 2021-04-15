@@ -33,7 +33,12 @@
               label-width="100px" label-position="top">
 
        <!--添加商品-->
-       <el-tabs v-model="activeIndex" :tab-position="'left'" :before-leave="beforeTabLeave">
+       <el-tabs v-model="activeIndex"
+                :tab-position="'left'"
+                :before-leave="beforeTabLeave"
+                @tab-click="tabClicked">
+
+         <!--基本信息-->
          <el-tab-pane label="基本信息" name="0">
 
            <el-form-item label="商品名称" prop="goods_name">
@@ -59,7 +64,23 @@
            </el-form-item>
 
          </el-tab-pane>
-         <el-tab-pane label="商品参数" name="1">商品参数</el-tab-pane>
+
+         <!--商品参数-->
+         <el-tab-pane label="商品参数" name="1">
+
+           <el-form-item v-for="item in manyTableData" :label="item.attr_name" :key="item.attr_id" >
+             <!--复选框-->
+             <el-checkbox-group v-model="item.attr_vals">
+               <el-checkbox :label="item1" v-for="(item1,i1) in item.attr_vals" :key="i1" border></el-checkbox>
+             </el-checkbox-group>
+
+           </el-form-item>
+
+
+
+         </el-tab-pane>
+
+         <!--商品属性-->
          <el-tab-pane label="商品属性" name="2">商品属性</el-tab-pane>
          <el-tab-pane label="商品图片" name="3">商品图片</el-tab-pane>
          <el-tab-pane label="商品内容" name="4">商品内容</el-tab-pane>
@@ -118,7 +139,8 @@
           expandTrigger:'hover',
           // checkStrictly:true
         },
-        selectedCategoryKyes:[]
+        manyTableData:[],
+
 
       }
     },
@@ -132,7 +154,6 @@
         }
         this.categoryList = res.data
 
-        console.log(res)
       },
       //级联选择器变化,会出发这个函数
       parentCategoryChange(){
@@ -148,9 +169,39 @@
           this.$message.error('请先选择商品分类!')
           return false
         }
+      },
+      async tabClicked(){
+        //证明访问的是动态参数面板
+        if(this.activeIndex === '1'){
 
+          const {data:res} = await this.$http.get(`categories/${this.cateID}/attributes`,{params:{sel:'many'}})
+
+          if (res.meta.status !== 200){
+            return this.$message.error( res.meta.msg)
+          }
+
+          console.log(res)
+          res.data.forEach(item =>{
+
+            item.attr_vals = item.attr_vals?item.attr_vals.split(','):[]
+
+          })
+
+          this.manyTableData = res.data
+
+        }
       }
 
+    },
+    computed:{
+
+      cateID(){
+
+        if(this.addGoodsForm.goods_cat.length === 3){
+          return this.addGoodsForm.goods_cat[2]
+        }
+        return null
+      },
     }
   }
 </script>
@@ -169,6 +220,10 @@
   .el-tabs{
     margin-top: 15px;
 
+  }
+
+  .el-checkbox{
+    margin:0 5px 0 0 !important;
   }
 
 </style>

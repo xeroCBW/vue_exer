@@ -180,7 +180,7 @@
           label:'cat_name',
           children:'children',
           expandTrigger:'hover',
-          checkStrictly:true
+          // checkStrictly:true
         },
         selectedCategoryKeys:[],
         //被激活页签的名称

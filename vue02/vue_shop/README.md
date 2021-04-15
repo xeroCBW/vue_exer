@@ -554,3 +554,21 @@ align-cente
 
 ```
 
+
+38. 阻止切换
+
+```
+
+beforeTabLeave
+
+看 index  0 1 
+
+
+tab-click
+被选中
+
+
+```
+
+
+
