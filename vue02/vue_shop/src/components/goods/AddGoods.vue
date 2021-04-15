@@ -82,7 +82,7 @@
 
            <el-form-item v-for="item in onlyTableData" :label="item.attr_name" :key="item.attr_id" >
              <!--复选框-->
-             <el-input v-model="item.attr_vals"></el-input>
+             <!--<el-input v-model="item.attr_vals"></el-input>-->
            </el-form-item>
 
          </el-tab-pane>
@@ -95,6 +95,7 @@
              :on-preview="handlePreview"
              :on-remove="handleRemove"
              :headers="headerObj"
+             :on-success="handleSuccess"
              list-type="picture">
              <el-button size="small" type="primary">点击上传</el-button>
              <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
@@ -130,7 +131,8 @@
           goods_price:0,
           goods_weight:0,
           goods_number:0,
-          goods_cat:[]
+          goods_cat:[],
+          pics:[]
 
         },
         addGoodsFormRules:{
@@ -165,7 +167,9 @@
         //图片上传的请求头
         headerObj:{
           Authorization:window.sessionStorage.getItem('token')
-        }
+        },
+        // 上传文件路径
+
 
 
       }
@@ -232,6 +236,17 @@
 
       },
       handleRemove(){
+
+      },
+      //监听图片上传成功
+      handleSuccess(response){
+
+
+        const picInfo = {pic:response.data.tmp_path}
+        this.addGoodsForm.pics.push(picInfo)
+
+        console.log(this.addGoodsForm.pics)
+
 
       }
 
