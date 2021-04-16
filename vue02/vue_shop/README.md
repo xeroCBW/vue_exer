@@ -724,6 +724,18 @@ console.clear()
 ```
 
 
+
+56. 安装less
+
+```
+
+npm install less@3.9.0 --save-dev
+
+npm install less-loader@4.1.0 --save-dev
+```
+
+
+
 ### 项目的上线和优化
 
 1. 生成打包报告
