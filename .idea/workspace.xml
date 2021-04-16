@@ -23,15 +23,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue02/vue_shop/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="56" column="38" lean-forward="true" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue02/api接口文档.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -55,10 +46,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/Home.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="189">
+              <caret line="191" column="15" selection-start-line="191" selection-start-column="15" selection-end-line="191" selection-end-column="15" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/assets/logo.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -124,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>el-tag</find>
       <find>handleClose</find>
       <find>para</find>
       <find>修改</find>
@@ -154,6 +149,7 @@
       <find>退出</find>
       <find>blanchedalmond</find>
       <find>logout</find>
+      <find>img</find>
     </findStrings>
     <replaceStrings>
       <replace>editAddressForm</replace>
@@ -291,6 +287,14 @@
               <item name="vue02" type="462c0819:PsiDirectoryNode" />
               <item name="vue_shop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="exer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="exer" type="462c0819:PsiDirectoryNode" />
+              <item name="vue02" type="462c0819:PsiDirectoryNode" />
+              <item name="vue_shop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -399,18 +403,18 @@
       <workItem from="1617871322574" duration="158000" />
       <workItem from="1617885567477" duration="1659000" />
       <workItem from="1617948539424" duration="423000" />
-      <workItem from="1618116652871" duration="138744000" />
+      <workItem from="1618116652871" duration="139193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158177000" />
+    <option name="totallyTimeSpent" value="158626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1284" y="340" width="1274" height="818" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.28890663" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.28890663" />
       <window_info id="Structure" order="1" sideWeight="0.5018248" side_tool="true" weight="0.2745411" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" weight="0.32916668" />
@@ -423,7 +427,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960095" visible="true" weight="0.29444444" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49960095" visible="true" weight="0.29444444" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50039905" side_tool="true" weight="0.17222223" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -606,9 +610,6 @@
           <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/assets/logo.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/goods/Categories.vue">
       <provider selected="true" editor-type-id="text-editor">
@@ -828,10 +829,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/assets/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/Home.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        <state relative-caret-position="189">
+          <caret line="191" column="15" selection-start-line="191" selection-start-column="15" selection-end-line="191" selection-end-column="15" />
         </state>
       </provider>
     </entry>

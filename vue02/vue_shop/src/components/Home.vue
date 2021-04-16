@@ -7,7 +7,7 @@
     <el-header >
 
       <div class="">
-        <img src="../assets/logo.png" alt="">
+        <img src="../assets/logo.png" alt="" class="icon-img">
         <span>管理系统后台</span>
       </div>
       <!--<el-button @click="logout">退出</el-button>-->
@@ -30,7 +30,7 @@
 
       <el-aside :width="isCollapse?'64px':'200px'" >
         <!--设置折叠-->
-        <div class="toggle-button" @click="toggle_collapse">|||</div>
+        <!--<div class="toggle-button" @click="toggle_collapse">|||</div>-->
 
 
         <!-- 侧边栏菜单区-->
@@ -151,10 +151,10 @@
     align-items: center;
     color: #fff;
     font-size: 20px;
-    /*img{*/
-      /*width: 80px;*/
-      /*height: 80px;*/
-    /*}*/
+    .icon-img{
+      width: 40px;
+      height: 40px;
+    }
     > div{
       display: flex;
       align-items: center;
