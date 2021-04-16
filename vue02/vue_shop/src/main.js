@@ -24,7 +24,7 @@ Vue.use(ElementUI)
 Vue.use(VueQuillEditor)
 
 //配置请求的根路径
-axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
+axios.defaults.baseURL = 'http://120.77.223.13:8888/api/private/v1/'
 
 
 //设置token

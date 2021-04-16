@@ -20,6 +20,38 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+## npm 设置
+
+
+```
+
+
+npm config set registry http://registry.npm.taobao.org/
+
+npm config get registry
+
+# 安装 cnpm
+
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+```
+
+
+## 创建项目
+
+```
+
+npm install -g @vue/cli
+
+vue init webpack xxx
+
+npm install
+
+npm run dev
+
+
+```
+
 
 ## 一. 使用ElementUI
 
@@ -670,6 +702,25 @@ lodash.merge
 ]
 
 iconObj[i]
+```
+
+
+55. computed 计算属性 相对来说性能更高
+
+```
+
+method 方法会计算多次
+computed 只有更新后才会调用
+
+```
+
+56. 清空控制台
+
+```
+
+console.clear()
+
+
 ```
 
 
