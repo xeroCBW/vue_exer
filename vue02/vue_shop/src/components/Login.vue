@@ -71,13 +71,16 @@
 
           const result = await this.$http.post('login',this.loginForm)
           const res = result.data
-          // console.log(res)
+          console.log(res)
           if( res.meta.status !== 200){
 
             return this.$message.error("登录失败 " + res.meta.msg)
           }else {
             this.$message.success(("登录成功"))
             window.sessionStorage.setItem('token',res.data.token)
+            //保存用户信息
+            window.sessionStorage.setItem('username',res.data.username)
+
           //  实现页面的跳转
             this.$router.push('/home')
           }

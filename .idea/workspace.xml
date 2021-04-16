@@ -14,20 +14,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-652">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#140#161#0" expanded="true" />
-                <element signature="e#421#466#0" expanded="true" />
-                <element signature="e#590#623#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue02/vue_shop/.babelrc">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -69,8 +55,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/Home.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+            <state relative-caret-position="248">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/goods/Params.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="427" column="12" selection-start-line="427" selection-start-column="4" selection-end-line="427" selection-end-column="12" />
+              <folding>
+                <element signature="n#style#0;n#el-row#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <marker date="1618476253723" expanded="true" signature="8253:8490" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/Login.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1478">
-              <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="345">
+              <caret line="81" column="51" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -125,8 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>showInput</find>
-      <find>handleInputConfirm</find>
       <find>el-tag</find>
       <find>handleClose</find>
       <find>para</find>
@@ -153,8 +150,10 @@
       <find>categoryProps</find>
       <find>editAddressFormRef</find>
       <find>el-icon</find>
-      <find>blanchedalmond</find>
       <find>getMenuList</find>
+      <find>退出</find>
+      <find>blanchedalmond</find>
+      <find>logout</find>
     </findStrings>
     <replaceStrings>
       <replace>editAddressForm</replace>
@@ -214,8 +213,8 @@
         <option value="$PROJECT_DIR$/vue02/vue_shop/src/components/report/Reports.vue" />
         <option value="$PROJECT_DIR$/vue02/vue_shop/src/main.js" />
         <option value="$PROJECT_DIR$/vue02/vue_shop/README.md" />
-        <option value="$PROJECT_DIR$/vue02/vue_shop/src/components/Login.vue" />
         <option value="$PROJECT_DIR$/vue02/vue_shop/.babelrc" />
+        <option value="$PROJECT_DIR$/vue02/vue_shop/src/components/Login.vue" />
         <option value="$PROJECT_DIR$/vue02/vue_shop/src/components/Home.vue" />
       </list>
     </option>
@@ -292,16 +291,7 @@
               <item name="vue02" type="462c0819:PsiDirectoryNode" />
               <item name="vue_shop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exer" type="462c0819:PsiDirectoryNode" />
-              <item name="vue02" type="462c0819:PsiDirectoryNode" />
-              <item name="vue_shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="exer" type="b2602c69:ProjectViewProjectNode" />
@@ -310,6 +300,7 @@
               <item name="vue_shop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="goods" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -408,12 +399,12 @@
       <workItem from="1617871322574" duration="158000" />
       <workItem from="1617885567477" duration="1659000" />
       <workItem from="1617948539424" duration="423000" />
-      <workItem from="1618116652871" duration="137113000" />
+      <workItem from="1618116652871" duration="138744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156546000" />
+    <option name="totallyTimeSpent" value="158177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1284" y="340" width="1274" height="818" extended-state="0" />
@@ -691,17 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/goods/Params.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="152" column="25" selection-start-line="152" selection-start-column="18" selection-end-line="152" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#el-row#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <marker date="1618476253723" expanded="true" signature="8253:8490" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -820,13 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/Login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1478">
-          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue02/vue_shop/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -837,10 +810,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/goods/Params.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="427" column="12" selection-start-line="427" selection-start-column="4" selection-end-line="427" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#el-row#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <marker date="1618476253723" expanded="true" signature="8253:8490" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/Login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="81" column="51" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vue02/vue_shop/src/components/Home.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+        <state relative-caret-position="248">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
         </state>
       </provider>
     </entry>

@@ -10,7 +10,16 @@
         <img src="../assets/logo.png" alt="">
         <span>管理系统后台</span>
       </div>
-      <el-button @click="logout">退出</el-button>
+      <!--<el-button @click="logout">退出</el-button>-->
+
+      <el-dropdown @command="logout">
+        <span class="el-dropdown-link">
+        {{username}}<i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu >
+          <el-dropdown-item>退出登录</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
 
     </el-header>
 
@@ -93,6 +102,7 @@
     },
     methods:{
       logout(){
+
         window.sessionStorage.clear()
         this.$router.push('/login')
       },
@@ -115,6 +125,17 @@
         this.activePath = activePath
 
       }
+    },
+    computed:{
+
+      username(){
+
+        const username = window.sessionStorage.getItem('username')
+        console.log('-----')
+        console.log(username)
+        return username
+      }
+
     }
   }
 </script>
@@ -166,6 +187,11 @@
     letter-spacing: 0.4em;
     cursor: pointer;
 
+  }
+
+  .el-dropdown{
+    font-size: 16px;
+    color: white;
   }
 
 
