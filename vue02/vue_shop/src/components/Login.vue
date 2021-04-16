@@ -26,8 +26,6 @@
 
 
       </div>
-
-      登录组件
     </div>
 </template>
 
@@ -107,7 +105,7 @@
 
     width: 450px;
     height: 300px;
-    background-color: blanchedalmond;
+    background-color: white;
     border-radius: 3px;
     position:absolute;
     left: 50%;

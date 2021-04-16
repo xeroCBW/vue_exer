@@ -35,7 +35,7 @@
             <!--一级菜单的模板区-->
             <template slot="title">
               <!--i是图标-->
-              <i class="el-icon-message"></i>
+              <i :class="iconMap[item.id]"></i>
               <!--表示的是文本-->
               <span>{{item.authName}}</span>
             </template>
@@ -81,7 +81,14 @@
         menuList:[],
         isCollapse:false,
         //被激活的链接地址
-        activePath:""
+        activePath:"",
+        iconMap:{
+          125:'el-icon-user',
+          103:'el-icon-help',
+          101:'el-icon-s-goods',
+          102:'el-icon-s-order',
+          145:'el-icon-data-line'
+        }
       }
     },
     methods:{
@@ -92,9 +99,11 @@
       async getMenuList(){
         //将返回的data数据重新命名成为 res
         const {data:res}  = await this.$http.get('menus')
-        // console.log(res)
+        console.log(res)
+
         if(res.meta.status !== 200 )return this.$message.error(res.meta.msg)
         this.menuList = res.data
+
       },
       toggle_collapse(){
         this.isCollapse = !this.isCollapse
