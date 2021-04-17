@@ -123,3 +123,32 @@ nodemon app.js
 
 
 ```
+
+
+
+5. post 请求
+
+```
+
+ npm i body-parser --save
+
+安装 
+
+
+```
+
+
+
+6. 生成 token
+
+
+```
+
+
+npm install jsonwebtoken -S   //JWT生成Token
+
+npm install express-jwt -S   //JWT生成的Token的验证和解析
+
+npm install cors -S   //node跨域
+
+```
