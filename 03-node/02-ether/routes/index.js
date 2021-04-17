@@ -5,10 +5,11 @@ var router = express.Router();
 
 var cate = require('../controllers/CateController')
 
-
+var post = require('../controllers/PostController')
 
 
 
 /* GET home page. */
 router.get('/',cate.getCateList)
+router.get('/post',post.getPostList)
 module.exports = router;
