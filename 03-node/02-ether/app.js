@@ -31,6 +31,7 @@ app.use((req, res, next) => {
   //登录直接过
   if(req.url === '/login'){
     next()
+    return
   }
   const token = req.headers['authorization']
   const username = jwt.decode(token,'infonet')
