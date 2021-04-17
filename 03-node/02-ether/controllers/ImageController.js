@@ -1,11 +1,13 @@
 var dbConfig = require('../util/dbconfig')
 
 
-getCateList=(req,res)=>{
+getImageList=(req,res)=>{
 
-  var sql = 'select * from image'
 
-  var sqlArr = []
+  let {id} = req.query
+  var sql = 'select * from image where  user_id = ?'
+
+  var sqlArr = [id]
 
   var callBack = (err,data)=>{
     if(err){
@@ -28,6 +30,6 @@ getCateList=(req,res)=>{
 
 module.exports = {
 
-  getCateList
+  getImageList
 
 }

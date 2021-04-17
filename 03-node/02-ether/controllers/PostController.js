@@ -1,8 +1,6 @@
 var dbConfig = require('../util/dbconfig')
 
 
-
-
 getPostList=(req,res)=>{
 
   var sql = 'select * from post'
