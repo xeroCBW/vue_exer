@@ -15,7 +15,11 @@ router.get('/', function(req, res, next) {
       console.log('链接出错')
     }else{
       res.send({
-        'list':data
+        'data':data,
+        'meta':{
+          status:200,
+          msg:'请求成功'
+        }
       })
     }
   }
