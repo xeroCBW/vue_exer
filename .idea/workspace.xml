@@ -1,51 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93f52399-3e3f-474b-990f-7f991f8f8679" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/.babelrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/.postcssrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/.postcssrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/build/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/build/build.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/build/check-versions.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/build/check-versions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/build/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/build/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/build/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/build/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/build/vue-loader.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/build/vue-loader.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/build/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/build/webpack.base.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/build/webpack.dev.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/build/webpack.dev.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/build/webpack.prod.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/build/webpack.prod.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/config/dev.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/config/dev.env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/config/prod.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/config/prod.env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/assets/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/assets/css/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/Welcome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/Welcome.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/goods/AddGoods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/goods/AddGoods.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/goods/Categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/goods/Categories.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/goods/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/goods/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/goods/Params.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/goods/Params.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/order/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/order/Orders.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/order/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/order/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/order/city_data2016.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/order/city_data2016.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/order/city_data2017_element.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/order/city_data2017_element.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/order/provinces.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/order/provinces.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/power/Rights.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/power/Rights.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/power/Roles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/power/Roles.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/report/Reports.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/report/Reports.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/components/user/Users.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/components/user/Users.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue02/vue_shop/static/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/vue02/01-vue_shop/static/.gitkeep" afterDir="false" />
-    </list>
+    <list default="true" id="93f52399-3e3f-474b-990f-7f991f8f8679" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -290,7 +246,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -303,31 +258,11 @@
               <item name="exer" type="462c0819:PsiDirectoryNode" />
               <item name="vue02" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="exer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exer" type="462c0819:PsiDirectoryNode" />
-              <item name="vue02" type="462c0819:PsiDirectoryNode" />
-              <item name="02-blockchain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exer" type="462c0819:PsiDirectoryNode" />
-              <item name="vue02" type="462c0819:PsiDirectoryNode" />
-              <item name="02-blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exer" type="462c0819:PsiDirectoryNode" />
-              <item name="vue02" type="462c0819:PsiDirectoryNode" />
-              <item name="02-blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -426,12 +361,12 @@
       <workItem from="1617948539424" duration="423000" />
       <workItem from="1618116652871" duration="141334000" />
       <workItem from="1618565979737" duration="11190000" />
-      <workItem from="1618580632622" duration="197000" />
+      <workItem from="1618580632622" duration="304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171957000" />
+    <option name="totallyTimeSpent" value="172261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="963" y="425" width="1474" height="818" extended-state="0" />
