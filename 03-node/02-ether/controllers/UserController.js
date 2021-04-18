@@ -1,16 +1,6 @@
 const expressJwt = require("jsonwebtoken");
 var dbConfig = require('../util/dbconfig')
-var Web3 = require("web3")  //web3
-var fs = require("fs")                      //文件读取库
-var web3 = new Web3(Web3.givenProvider || 'http://172.17.16.6:8545') //连接私链
-//const部分
-const ContractAddr = "0x01191384a2be3586834a9078cb3d650b5a6d55e3"   //合约地址
-const AdminAddr = "0x6c0496471e63c5c170760ab1011c0bd508610896" //账户地址
-const ABIAdrr = "../contract.json"  //合约的ABI地址
-//连接智能合约
-var F = fs.readFileSync(ABIAdrr);
-var abi = JSON.parse(F)
-var AC_Contract = new web3.eth.Contract(abi, ContractAddr)
+const chain_tools = require('../util/chain_tools')
 
 
 login = (req,res)=>{
@@ -27,7 +17,7 @@ login = (req,res)=>{
 
   console.log('登录中---------')
 
-  AC_Contract.methods.Log_In(AdminAddr,username,password).call(function(err,r){
+  chain_tools.AC_Contract.methods.Log_In(chain_tools.AdminAddr,username,password).call(function(err,r){
 
 
     console.log('返回中....')
@@ -66,59 +56,53 @@ login = (req,res)=>{
         }
       };
 
-      return res.status(400).json(response)
+      return res.json(response)
 
     }
 
   })
-
-
-
-
-
-
-
-
-
-  // res.send({
-  //   username:username,
-  //   password:password
-  // })
-
-
-
-  // var sql = 'select * from image'
-  //
-  // var sqlArr = []
-  //
-  // var callBack = (err,data)=>{
-  //
-  //
-  //
-  //   if(err){
-  //     console.log('链接出错')
-  //   }else{
-  //     res.send({
-  //       'data':data,
-  //       'meta':{
-  //         status:200,
-  //         msg:'请求成功'
-  //       }
-  //     })
-  //   }
-  //
-  //
-  // }
-  //
-  // dbConfig.sqlConnet(sql,sqlArr,callBack)
-
-
 }
 
 
 
+
+//注册模块
+register=(req,res)=>{
+
+  let { school_name, usernname, password } = req.body
+
+  chain_tools.web3.eth.personal.unlockAccount(chain_tools.AdminAddr, chain_tools.AdminPassword, function () {
+    AC_Contract.methods.Application_Regist(school_name, usernname, password).send({ from:chain_tools.AdminAddr })
+      .then(async function (myContactInstance) {
+        console.log("Remove successfully.")
+        return res.json(
+          {
+            'data': null,
+            'meta': {
+              'msg': '注册提交成功',
+              'status': 0
+            }
+          }
+        )
+      })
+      .catch(err => {
+        console.log("Error: failed to Remove, detail:", err)
+        return res.json({
+          'data': null,
+          'meta': {
+            msg: '注册提交失败',
+            'status': 1
+          }
+        })
+      })
+  })
+
+}
+
+
 module.exports = {
 
-  login
+  login,
+  register
 
 }
