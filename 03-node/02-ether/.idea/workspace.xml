@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e49bc251-06bd-41af-b8b8-cd2f71ef5d94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../00-node基础/.idea/00-node基础.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../00-node基础/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../00-node基础/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../00-node基础/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../00-node基础/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../00-node基础/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../00-node基础/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../00-node基础/01-async.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../00-node基础/02-全局对象.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contract.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../00-node基础/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../00-node基础/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../00-node基础/02-全局对象.js" beforeDir="false" afterPath="$PROJECT_DIR$/../00-node基础/02-全局对象.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -267,12 +252,12 @@
       <option name="presentableId" value="Default" />
       <updated>1618651060755</updated>
       <workItem from="1618651062649" duration="6954000" />
-      <workItem from="1618662788554" duration="11236000" />
+      <workItem from="1618662788554" duration="11846000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18190000" />
+    <option name="totallyTimeSpent" value="18800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="476" y="277" width="1274" height="935" extended-state="0" />
