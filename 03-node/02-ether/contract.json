@@ -1,0 +1,567 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "data",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "AddAcademicCertificationData",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "AddCommitteeMumber",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "data",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "RemoveAcademicCertificationData",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "RemoveCommitteeMumber",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "AC_Data",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "Person_ID",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "Admission_Time",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "Graduation_Time",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "AC_Type",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "School",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "major",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "AC_Sign",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "AC",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "P_ID",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "Admission_Time",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "Graduation_Time",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "AC_Type",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "major",
+				"type": "string"
+			}
+		],
+		"name": "Add_AC_Data",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "usn",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "pwd",
+				"type": "string"
+			}
+		],
+		"name": "Add_Admin",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "New_Mum",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "Add_Committee_Mumber",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "Admin",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "Username",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "Password",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "usn",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "pwd",
+				"type": "string"
+			}
+		],
+		"name": "Application_Regist",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Get_Commitee_Mumbers",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Academic_Certification.committee_items[]",
+				"name": "List",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Get_Register_List",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Academic_Certification.committee_items[]",
+				"name": "Result",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "input",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "p_id",
+				"type": "string"
+			}
+		],
+		"name": "Is_Certified_ID",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "Sign",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "Admission_Time",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "Graduation_Time",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "AC_Type",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "School",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "major",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Academic_Certification.Result_S",
+				"name": "Result",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "usn",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "pwd",
+				"type": "string"
+			}
+		],
+		"name": "Log_In",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "sign",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "admin",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "Registe",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "input",
+				"type": "string"
+			}
+		],
+		"name": "Remove_AC_Data",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "RM_Mum",
+				"type": "address"
+			}
+		],
+		"name": "Remove_Committee_List",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "RM_Mum",
+				"type": "address"
+			}
+		],
+		"name": "Remove_Committee_Mumber",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "p_id",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "ac",
+				"type": "bytes32"
+			}
+		],
+		"name": "Remove_Person_List",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "input",
+				"type": "string"
+			}
+		],
+		"name": "Search_With_ID",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "Sign",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "Admission_Time",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "Graduation_Time",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "AC_Type",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "School",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "major",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Academic_Certification.Result_S[]",
+				"name": "Result",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "committee",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "committee_name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "destroy",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
