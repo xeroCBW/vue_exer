@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ba8f6b1-1674-41e1-938a-977e437de02a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db/db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../02-ether/config/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../02-ether/controllers/AdminController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../02-ether/controllers/CertificationController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../02-ether/controllers/ManagerController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../02-ether/controllers/router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../02-ether/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../02-ether/util/chain_tools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/.idea/00-node-base.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/01-教程一/01-async.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/01-教程一/02-全局对象.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/01-教程一/03-函数表达式.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/01-教程一/04-模块-用来暴露的.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/01-教程一/04-模块.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/01-教程一/05-事件.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00-node基础/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02-ether/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../02-ether/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02-ether/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../02-ether/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02-ether/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../02-ether/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../02-ether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../02-ether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02-ether/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../02-ether/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02-ether/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../02-ether/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../02-ether/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../02-ether/routes/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -104,7 +76,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/02-exer/01-module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="223">
               <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
             </state>
           </provider>
@@ -302,7 +274,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32983682" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32983682" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997669" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -421,7 +393,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/02-exer/01-module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="223">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
         </state>
       </provider>

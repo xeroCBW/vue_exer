@@ -149,6 +149,61 @@ npm install jsonwebtoken -S   //JWT生成Token
 
 npm install express-jwt -S   //JWT生成的Token的验证和解析
 
-npm install cors -S   //node跨域
+
+const expressJwt = require("jsonwebtoken");
+let token = expressJwt.sign({username:username},'infonet',{
+        // 过期时间
+        expiresIn:"24h",
+      })
+
+
+
+在 app.js 设置拦截
+
+//验证登录-------
+app.use((req, res, next) => {
+
+  //登录直接过
+  if(req.url === '/login'){
+    next()
+    return
+  }
+  const token = req.headers['authorization']
+  const username = jwt.decode(token,'infonet')
+  if(token == undefined  || username == null) {
+
+    res.status(403).send({
+      data:null,
+      meta:{
+        msg:'token 无效',
+        status:403
+      }
+    })
+    return
+  }
+  //直接下发
+  next()
+
+});
+
+
+```
+
+
+7. 设置跨域
+
+
+```
+
+app.all('*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
+  res.header("X-Powered-By",' 3.2.1')
+  res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
+
 
 ```
