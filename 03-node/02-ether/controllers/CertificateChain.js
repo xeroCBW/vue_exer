@@ -5,6 +5,7 @@ var dbConfig = require('../util/dbconfig')
 
 certifate_chain = (req,res)=>{
 
+
   let admissionTime = req.body.admissionTime;
   let cerNum = req.body.cerNum;
   let graduateTime = req.body.graduateTime;

@@ -187,7 +187,7 @@ fs.writeFile(): 将数据写入文件。相关方法：fs.write()。
 
 ```
 
-7. mkdirp 可以创建带有层级的文件
+#### 7. mkdirp 可以创建带有层级的文件
 
 ```
 
@@ -197,7 +197,7 @@ mkdirp('cbw/test/01',function(){})
 ```
 
 
-8. 模板字符串
+#### 8. 模板字符串
 
 ```javascript
 
@@ -211,7 +211,7 @@ mkdirp('cbw/test/01',function(){})
 ```
 
 
-9. es6 的简写
+#### 9. es6 的简写
 
 ```javascript
 
@@ -231,7 +231,7 @@ mkdirp('cbw/test/01',function(){})
 ```
 
 
-10. promise 来处理异步的数据
+#### 10. promise 来处理异步的数据
 
 ```javascript
 //表示有成功和失败的回调
@@ -254,19 +254,15 @@ console.log(data);
 
 ```
 
-11. async await
-
+#### 11. async await
 
 ```javascript
 
 // async 用于声明异步方法
 // await 需要用在异步的方法里面
 
-
-
 //这里返回的是一个promise
 async function test07(){
-
   return "你好 node js"
 }
 
@@ -274,9 +270,42 @@ async function test07(){
 async function test08() {
   const a = await test07()
   console.log(a);
-  
 }
 
+```
+
+await 调用的是一个 proMise 方法,采用 async引用
+
+
+```javascript
+
+//判断是一个文件还是一个目录
+async function isDir(path) {
+
+  return new Promise((resolve,reject)=>{
+
+    fs.stat(path,(error,stats)=>{
+
+      if(error){
+        console.log(error)
+        reject(error)
+        return
+      }
+      if(stats.isDirectory()){
+        resolve(true)
+      }else {
+        resolve(false)
+      }
+    })
+  })
+}
+
+async function test09() {
+
+  const res = await isDir("./1.txt")
+  console.log(res);
+  
+}
 
 ```
 

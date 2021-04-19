@@ -1,5 +1,5 @@
 // let 和 const 都是块 作用域
-
+const fs = require("fs")
 function test01() {
 
   if(true){
@@ -102,9 +102,36 @@ async function test07(){
 }
 
 async function test08() {
-
   const a = await test07()
   console.log(a);
+}
+
+
+//判断是一个文件还是一个目录
+async function isDir(path) {
+
+  return new Promise((resolve,reject)=>{
+
+    fs.stat(path,(error,stats)=>{
+
+      if(error){
+        console.log(error)
+        reject(error)
+        return
+      }
+      if(stats.isDirectory()){
+        resolve(true)
+      }else {
+        resolve(false)
+      }
+    })
+  })
+}
+
+async function test09() {
+
+  const res = await isDir("./1.txt")
+  console.log(res);
   
 }
 
@@ -114,7 +141,7 @@ async function test08() {
 
 // test03()
 
-test04()
+// test04()
 
 // test05()
 
@@ -122,3 +149,5 @@ test04()
 
 // test08()
 
+
+test09()
