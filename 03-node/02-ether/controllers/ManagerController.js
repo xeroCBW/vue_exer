@@ -2,7 +2,11 @@ const chain_tools = require('../util/chain_tools')
 
 // 上传证书功能
 manager_upload = (req, res) => {
-  let { admissionTime, cerNum, graduateTime, idNum, level, major, name, schoolName } = req.body
+  let { admissionTime, cerNum, graduateTime, idNum, level, major } = req.body
+
+  console.log(admissionTime, cerNum, graduateTime, idNum, level, major)
+  console.log(chain_tools.AdminAddr, chain_tools.AdminPassword)
+  
 
   // console.log(req.body)
   chain_tools.web3.eth.personal.unlockAccount(chain_tools.AdminAddr, chain_tools.AdminPassword, function () { //解锁账户，并在解锁之后，执行下面的函数
