@@ -36,6 +36,17 @@ function  test02() {
 
 }
 
+function test03(){
+
+  const text = fs.readFile('./1.txt',(err,data)=>{
+    console.log(data.toString())
+
+  })
+
+}
 
 
-test02()
+// test02()
+
+
+test03()

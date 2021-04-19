@@ -187,11 +187,106 @@ fs.writeFile(): 将数据写入文件。相关方法：fs.write()。
 
 ```
 
+7. mkdirp 可以创建带有层级的文件
+
+```
+
+var mkdirp = require('mkdirp')
+mkdirp('cbw/test/01',function(){})
+
+```
+
+
+8. 模板字符串
+
+```javascript
+
+//  使用模板字符串来编写
+  var a = "cbw"
+  var b = "hello world"
+
+  var c = `${a} ..... ${b}`
+  //cbw ..... hello world
+  console.log(c);
+```
+
+
+9. es6 的简写
+
+```javascript
+
+
+  //方法和属性
+  var name = "cbw"
+
+  var app = {
+    "name" :name
+  }
+  //名字一样,可以进行简写
+  var app = {
+    name
+  }
+  
+
+```
+
+
+10. promise 来处理异步的数据
+
+```javascript
+//表示有成功和失败的回调
+// promise (resolve , reject)
+
+var p = new Promise((resolve,reject)=>{
+
+  //这里只是使用了resolve
+  setTimeout(function () {
+    var name = "cbw"
+    resolve(name)
+  },1000)
+
+})
+
+
+p.then(function (data) {
+console.log(data);
+})
+
+```
+
+11. async await
+
+
+```javascript
+
+// async 用于声明异步方法
+// await 需要用在异步的方法里面
+
+
+
+//这里返回的是一个promise
+async function test07(){
+
+  return "你好 node js"
+}
+
+//这里正常调用
+async function test08() {
+  const a = await test07()
+  console.log(a);
+  
+}
+
+
+```
 
 
 
 
 
+### 常见问题
+[webstorm不能识别一些js方法，如require](https://blog.csdn.net/wang124454731/article/details/53525030)
+![](https://img-blog.csdn.net/20161208213239665?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuZzEyNDQ1NDczMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](https://img-blog.csdn.net/20161208213603872?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuZzEyNDQ1NDczMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-
-
+下载之后就会有各种代码提示了

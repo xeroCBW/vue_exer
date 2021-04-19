@@ -247,7 +247,7 @@
 				"type": "string"
 			}
 		],
-		"name": "Application_Regist",
+		"name": "Application_Registration",
 		"outputs": [
 			{
 				"internalType": "bool",
@@ -406,7 +406,7 @@
 				"type": "address"
 			}
 		],
-		"name": "Registe",
+		"name": "Register",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

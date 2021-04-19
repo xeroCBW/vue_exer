@@ -21,7 +21,7 @@ certification_query =(req, res) => {
       if (v['Sign'] === true) {
         let graduateInfo = {
           schoolName: v['School'],
-          graduateTime: v['Admission_Time'] + '-' + v['Graduation_Time'],
+          graduateTime: v['Admission_Time'] + '至' + v['Graduation_Time'],
           major: v['major'],
           degree: level[v['AC_Type']],
         }
@@ -29,7 +29,7 @@ certification_query =(req, res) => {
       }
     }
 
-    if (data['graduateInfo'] = null) {
+    if (data['graduateInfo'] != null) {
       return res.json({
         'data': data,
         'meta': {
@@ -69,7 +69,7 @@ certification_queryDetail = (req, res) => {
         graduateInfo: [
           {
             schoolName: r['School'],
-            graduateTime: r['Admission_Time'] + '-' + r['Graduation_Time'],
+            graduateTime: r['Admission_Time'] + '至' + r['Graduation_Time'],
             major: r['major'],
             degree: level[r['AC_Type']],
           }

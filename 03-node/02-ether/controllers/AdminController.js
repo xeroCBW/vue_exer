@@ -46,11 +46,9 @@ adm_pass = (req, res) => {
 
 
   chain_tools.web3.eth.personal.unlockAccount(chain_tools.AdminAddr, chain_tools.AdminPassword, () => {
-    chain_tools.AC_Contract.methods.Add_AC_Data(req.query.regist_addr).send({ from: chain_tools.AdminAddr })
+    chain_tools.AC_Contract.methods.Register(req.query.regist_addr).send({ from: chain_tools.AdminAddr })
         .then(async function (myContactInstance) {
           // console.log("Add successfully.")
-          chain_tools.AC_Contract.methods.Add_Committee_Mumber(req.query.regist_addr, req.query.regist_name).send({ from: chain_tools.AdminAddr })
-            .then(async function (myContactInstance) {
               return res.json({
                 'data': null,
                 'meta': {
@@ -59,9 +57,10 @@ adm_pass = (req, res) => {
                 }
               })
             })
-            .catch(err => {
+      .catch(err => {
+              console.log(err);
               return res.json({
-                'data': null,
+                'data': err.toString(),
                 'meta': {
                   'msg': '授予权限失败',
                   'status': 404
@@ -70,17 +69,6 @@ adm_pass = (req, res) => {
             })
 
         })
-        .catch(err => {
-          return res.json({
-            'data': null,
-            'meta': {
-              'msg': '授予权限失败',
-              'status': 404
-            }
-          })
-        })
-
-    })
   };
 
 

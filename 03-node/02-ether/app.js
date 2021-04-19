@@ -48,7 +48,7 @@ app.use((req, res, next) => {
   const username = jwt.decode(token,'infonet')
   if(token == undefined  || username == null) {
 
-    res.status(403).send({
+    res.send({
       data:null,
       meta:{
         msg:'token 无效',

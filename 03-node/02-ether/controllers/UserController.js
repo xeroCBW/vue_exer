@@ -69,10 +69,13 @@ login = (req,res)=>{
 //注册模块
 register=(req,res)=>{
 
-  let { school_name, usernname, password } = req.body
+  let { school_name, username, password } = req.body
+  
+  
+  console.log(school_name, username, password );
 
   chain_tools.web3.eth.personal.unlockAccount(chain_tools.AdminAddr, chain_tools.AdminPassword, function () {
-    AC_Contract.methods.Application_Regist(school_name, usernname, password).send({ from:chain_tools.AdminAddr })
+    chain_tools.AC_Contract.methods.Application_Registration(school_name, username, password).send({ from:chain_tools.AdminAddr })
       .then(async function (myContactInstance) {
         console.log("Remove successfully.")
         return res.json(
