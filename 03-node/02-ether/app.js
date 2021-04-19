@@ -45,7 +45,7 @@ app.use((req, res, next) => {
     return
   }
   const token = req.headers['authorization']
-  const username = jwt.decode(token,'infonet')
+  const decode_token = jwt.decode(token,'infonet')
   if(token == undefined  || username == null) {
 
     res.send({
@@ -57,6 +57,21 @@ app.use((req, res, next) => {
     })
     return
   }
+  const end_time = parseInt(decode_token.exp);
+  const cur_time = new Date().getTime()/1000;
+//过期,超时了
+  if (cur_time > end_time){
+    res.send({
+      data:null,
+      meta:{
+        msg:'token 过期了',
+        status:403
+      }
+    })
+    return
+  }
+
+
   //直接下发
   next()
 

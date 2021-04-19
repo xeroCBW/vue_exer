@@ -122,10 +122,124 @@ app.use(function (req,res,next) {
 
 ##### 4. 内置中间件
 
+设置静态文件的加载,http://127.0.0.1:3000/stylesheets/style.css
+访问这个地址,可以直接访问静态文件
+
+```javascript
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+```
+
 
 
 #### 6. 路由
 
 路由都是向下匹配的,上一条匹配了,然后就不会继续匹配了
 
+
+
+#### 7. 获取传值
+
+##### 7.1 get 传值
+
+req.query
+
+```
+
+http://127.0.0.1:3000/article/get?id=1&num=2
+
+var get_article = function (req,res) {
+//{ id: '1', num: '2' }
+  console.log(req.query)
+  res.json({
+    data:"get_article"
+  })
+}
+
+
+```
+
+##### 7.2 post 传值
+
+req.body
+
+```
+
+const login = function (req,res) {
+//{ username: 'admin', password: 'admin' }
+  console.log(req.body)
+  res.send({
+    data:"hell0",
+    meta:{
+      msg:"success",
+      status:200
+    }
+  })
+
+
+}
+
+
+```
+
+##### 7.3 解析传值的工具
+
+主要是post 请求来接收
+
+```shell
+npm install body-parser
+```
+
+
+
+### 8. 使用cookie
+
+
+#### 8.1 安装
+
+
+```
+npm install cookie-parser
+
+var express = require('express')
+var cookieParser = require('cookie-parser')
+ 
+var app = express()
+app.use(cookieParser())
+
+```
+
+
+#### 8.2 设置过期
+
+
+```
+//设置 cookie, 一小时过期 ,cookie 的路径为 test
+res.cookie("username","张三",{maxAge:60*60*1000,"path":"/test"})
+
+//获取cookie
+let user = req.cookie.username 
+
+```
+
+
+
+
+
+### 模块化路由
+
+```
+//生成挂载路由
+var express = require('express');
+var router = express.Router();
+const user = require("../controller/UserController")
+
+//设置路由的路径
+router.post('/user/login', user.login);
+
+//输出路由
+module.exports = router;
+
+```
 

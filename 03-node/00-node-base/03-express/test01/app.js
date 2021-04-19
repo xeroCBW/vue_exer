@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -17,32 +16,28 @@ var app = express();
 
 //将请求转换成json格式
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}))
-
-
-
-
-
-
+app.use(bodyParser.urlencoded({ extended: false }))
+//设置 log
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+
+//设置cookie
 app.use(cookieParser());
+//设置内置中间件
 app.use(express.static(path.join(__dirname, 'public')));
 
+//设置路由
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
-// catch 404 and forward to error handler
+
+//设置 404
 app.use(function(req, res, next) {
-  
-  //自己设置 404 的错误中间件
-  res.send("404")
 
+  //设置 404 的错误中间件
+  res.send("404")
   // next(createError(404));
 });
 
-// error handler
+//设置 错误处理 中间件
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;

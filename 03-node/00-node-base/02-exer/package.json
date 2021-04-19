@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jsonwebtoken": "^8.5.1",
     "md5": "^2.3.0",
     "silly-datetime": "^0.1.2"
   }
