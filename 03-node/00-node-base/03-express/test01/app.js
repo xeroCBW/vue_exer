@@ -1,4 +1,5 @@
 var createError = require('http-errors');
+const bodyParser = require('body-parser')
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -8,6 +9,19 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+
+//设置引擎
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
+
+//将请求转换成json格式
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}))
+
+
+
+
 
 
 app.use(logger('dev'));
@@ -21,7 +35,11 @@ app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  
+  //自己设置 404 的错误中间件
+  res.send("404")
+
+  // next(createError(404));
 });
 
 // error handler
@@ -37,7 +55,6 @@ app.use(function(err, req, res, next) {
 
 // module.exports = app;
 
-
 app.listen(3000)
 
-console.log("开始 http://localhost:127.0.0.1:3000 ");
+console.log("开始 http://127.0.0.1:3000 ");
