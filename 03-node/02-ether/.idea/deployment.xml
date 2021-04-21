@@ -5,14 +5,14 @@
       <paths name="49.235.104.233">
         <serverdata>
           <mappings>
-            <mapping deploy="/code/02-ether" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/code/node_api/02-ether" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="8.142.46.6">
         <serverdata>
           <mappings>
-            <mapping deploy="/node_api/02-ether" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/code/node_api/02-ether" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
