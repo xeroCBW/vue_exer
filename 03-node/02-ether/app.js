@@ -17,6 +17,7 @@ var usersRouter = require('./routes/users');
 //初始化app
 var app = express();
 
+
 //设置跨域
 app.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -28,9 +29,20 @@ app.all('*', function(req, res, next) {
   next();
 });
 
+//将请求转换成json格式
+app.use(express.json());
+app.use(express.urlencoded({extended:false}))
 
 //验证token中间件
 app.use((req, res, next) => {
+
+  const ip = req.ip
+  const method = req.method
+  const path = req.path
+  const query = req.query
+  const body = req.body
+  console.log(ip,path,method,query,body)
+
 
   //放行请求路径为:/login的请求
   if(req.url === '/login'
@@ -45,14 +57,6 @@ app.use((req, res, next) => {
   //拦截初login之外其他请求
   const token = req.headers['authorization']// 获取请求header中token
   const decode_token = jwt.decode(token,config.JWT_KEY)//对 token 进行解密
-
-  const ip = req.ip
-  const method = req.method
-  const path = req.path
-  const query = req.query
-  const body = req.body
-
-  console.log(ip,path,method,query,body)
   console.log('token....',token,decode_token);
 
   // 验证token
@@ -96,9 +100,6 @@ var server = http.createServer(app);
 //静态资源
 app.use(express.static(path.join(__dirname, 'public')));
 
-//将请求转换成json格式
-app.use(express.json());
-app.use(express.urlencoded({extended:false}))
 
 //使用路由
 app.use('/', indexRouter);
