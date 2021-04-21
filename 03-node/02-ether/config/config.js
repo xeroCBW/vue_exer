@@ -1,13 +1,16 @@
-const ContractAddr = "0xa44452757403207bab10fa24abdf4e893371b302"   //合约地址
-const AdminAddr = "0x4e8302895bc8dde9c05a6b99351617074640996c" //账户地址
-//  const AdminAddr = "0xed44081989a5cc5777795642e5bd3aee53d8ea14" //账户地址
+const ContractAddr = "0x0fab3acd96faff75c90e6207d6281341fdc9876b"   //合约地址
+const AdminAddr = "0x306abddd3cb773fe419d9c981b357216e686e2df" //账户地址
+//const AdminAddr = "0x98b814663a07a2a70be3995397a70d34802e4a52" //账户地址
 
 const chain_addr = "http://172.29.161.216:8545"
 const AdminPassword = "123qwe"
+const JWT_KEY = "infonet"
+
 
 module.exports={
   ContractAddr,
   AdminAddr,
   AdminPassword,
-  chain_addr
+  chain_addr,
+  JWT_KEY
 }

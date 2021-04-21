@@ -3,7 +3,10 @@ const chain_tools = require('../util/chain_tools')
 // 教育部获取注册列表
 adm_registList = (req, res) => {
 
+  console.log("adm_registList...");
+
   chain_tools.AC_Contract.methods.Get_Register_List().call((err, result) => {
+
     if (err) return res.json(err)
 
     let data = {
@@ -75,8 +78,12 @@ adm_pass = (req, res) => {
 // 教育部拒绝申请(删除申请)
 
 adm_refuse =  (req, res) => {
-  web3.eth.personal.unlockAccount(chain_tools.AdminAddr, chain_tools.AdminPassword, () => {
-    chain_tools.AC_Contract.methods.Remove_Committee_List(req.query.regist_addr, req.query.regist_name).send({ from: chain_tools.AdminAddr })
+
+  chain_tools.web3.eth.personal.unlockAccount(chain_tools.AdminAddr, chain_tools.AdminPassword, () => {
+
+    console.log(req.query)
+
+    chain_tools.AC_Contract.methods.Remove_Register(req.query.regist_addr).send({ from: chain_tools.AdminAddr })
       .then(async function (myContactInstance) {
         return res.json({
           'data': null,
@@ -105,6 +112,8 @@ adm_refuse =  (req, res) => {
 
 
     console.log('adm_show...')
+
+
 
     chain_tools.AC_Contract.methods.Get_Commitee_Mumbers().call((err, result) => {
 
@@ -153,7 +162,7 @@ adm_delete = (req, res) => {
 
   var schoolAddress = req.query.schoolAddress;
 
-  web3.eth.personal.unlockAccount(chain_tools.AdminAddr, chain_tools.AdminPassword, function () {
+  chain_tools.web3.eth.personal.unlockAccount(chain_tools.AdminAddr, chain_tools.AdminPassword, function () {
     chain_tools.AC_Contract.methods.Remove_Committee_Mumber(schoolAddress).send({ from: chain_tools.AdminAddr })
       .then(async function (myContactInstance) {
         return res.json({

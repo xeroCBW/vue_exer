@@ -1,6 +1,7 @@
 const expressJwt = require("jsonwebtoken");
 var dbConfig = require('../util/dbconfig')
 const chain_tools = require('../util/chain_tools')
+const config = require("../config/config")
 
 
 login = (req,res)=>{
@@ -27,7 +28,7 @@ login = (req,res)=>{
 
     if(r[0] == true){
 
-      let token = expressJwt.sign({username:username},'infonet',{
+      let token = expressJwt.sign({username:username},config.JWT_KEY,{
         // 过期时间
         expiresIn:"24h",
       })

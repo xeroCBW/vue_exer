@@ -207,3 +207,28 @@ app.all('*', function(req, res, next) {
 
 
 ```
+
+
+
+
+### Vue 项目后台运行
+
+```bash
+nohup npm run dev >> ./vue.log & exit
+
+```
+
+
+### 打包部署 
+
+[Vue项目打包部署总结](https://segmentfault.com/a/1190000021530126)
+[ubuntu 安装nginx 并配置端口](https://www.jianshu.com/p/40594bccff9a)
+
+默认地址为:/var/www/html/
+报500 错误,加上 index.html
+
+```
+
+try_files $uri $uri/ /index.html;
+
+```
